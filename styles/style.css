@@ -112,7 +112,7 @@ img {
 .boton-hamburguesa.abierto + .navegacion {
   transform: translateX(0);
   display: flex;
-  top: 10vh;
+  top: 8vh;
   font-size: 0.99rem;
   width: 60%;
 }
@@ -837,6 +837,11 @@ img {
 
   .imagen-adicional-1{
       left: 30%;
+      position: absolute;
+      top: 0%;
+      width: 50%;
+      height: 100%;
+  }
   }
 
   .imagen-adicional-6{
