@@ -1,0 +1,840 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  background-size: cover; /* Cubre todo el contenido */
+  max-height: 200rem;
+  background-image: linear-gradient(to top, #cc31cc, #a73fa7); /* Degradado desde abajo (#400040) hasta arriba (#800080) */
+}
+
+/* Estilos para el header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #98129c;
+  padding: 10px;
+  width: 100%;
+  z-index: 999; /* Asegura que el encabezado esté por encima de otros elementos */
+  box-sizing: border-box;
+}
+
+.header__logo {
+  max-width: 100%; /* El logotipo puede ocupar hasta la mitad del ancho disponible */
+}
+
+a {
+  width: 50%;
+}
+
+img {
+  height: auto; /* Mantiene la proporción de aspecto de la imagen */
+  max-width: 100vw; /* Establece un ancho máximo basado en el ancho de la ventana */
+}
+
+/* Estilos para el contenido principal */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box; /* Incluir el padding en el cálculo del ancho */
+  margin-top: 10%;
+}
+
+.contenedor {
+  max-width: 1200px; /* Por ejemplo, establece un ancho máximo */
+  width: 100%;
+  box-sizing: border-box; /* Incluir el padding en el cálculo del ancho */
+}
+
+/* Estilos para el menú de navegación */
+.navegacion {
+  display: none; /* Inicialmente oculto */
+  flex-direction: column; /* Mostrar las opciones en vertical */
+  align-items: center; /* Centrar las opciones horizontalmente */
+  position: fixed; /* Posición fija para mantener el menú en la pantalla */
+  top: 0; /* Alinea el menú con la parte superior */
+  right: 0; /* Alinea el menú con el borde derecho de la pantalla */
+  background-color: #98129c; /* Color de fondo del menú */
+  width: 50%; /* Ancho del menú (la mitad de la pantalla) */
+  height: 100vh; /* Alto del menú (alto máximo de la pantalla) */
+  padding: 20px; /* Espaciado interior */
+  z-index: 999; /* Asegura que el menú esté por encima de otros elementos */
+  box-sizing: border-box; /* Incluir el padding en el cálculo del ancho */
+  transform: translateX(100%); /* Comienza fuera de la pantalla */
+  transition: transform 0.3s ease; /* Animación para el despliegue */
+  text-transform: uppercase;
+}
+
+/* Estilos para el botón de hamburguesa cuando está abierto */
+.boton-hamburguesa.abierto + .navegacion {
+  transform: translateX(0);
+  display: flex;
+  top: 10vh;
+  font-size: 0.99rem;
+  width: 60%;
+}
+
+/* Estilos para los enlaces del menú de navegación */
+.navegacion__enlace {
+  color: #fff; /* Color del texto */
+  text-decoration: none; /* Quita el subrayado */
+  margin: 5px 0; /* Espaciado entre enlaces */
+  font-family: "Poppins", sans-serif; /* Fuente del texto */
+  font-weight: 500; /* Peso de la fuente */
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+/* Estilos para el enlace de inicio de sesión */
+.navegacion__enlace.inicio-sesion {
+  order: 6; /* Coloca el enlace de inicio de sesión al final del menú de navegación */
+}
+
+.navegacion__enlace .icono-svg {
+  width: 20px; /* Tamaño más pequeño para el icono */
+  margin-left: 5px; /* Espacio entre el texto y el icono */
+}
+
+.inicio-sesion {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el ícono con el texto */
+}
+
+
+/* Estilos para el botón de hamburguesa */
+.boton-hamburguesa {
+  order: -1; /* Mover el botón de hamburguesa al inicio del header */
+  margin-right: 10px; /* Añadir espacio entre el botón y el enlace de inicio de sesión */
+}
+
+/* Estilos para el botón de hamburguesa */
+.boton-hamburguesa {
+  position: absolute; /* Posición absoluta para alinear con respecto al header */
+  top: 50%; /* Alinea verticalmente con respecto al header */
+  right: 10px; /* Alinea a la derecha */
+  transform: translateY(-50%); /* Centra verticalmente el botón */
+  background-color: transparent; /* Color de fondo transparente */
+  border: 2px solid #fff; /* Borde blanco */
+  color: #fff; /* Color del icono */
+  font-size: 24px; /* Tamaño del icono */
+  padding: 5px; /* Espaciado interno */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
+  border-radius: 4px; /* Bordes redondeados */
+}
+
+
+/* Estilos para el botón de hamburguesa cuando se abre el menú */
+.boton-hamburguesa.abierto {
+  color: #000; /* Cambia el color del icono cuando se abre */
+}
+
+
+/* Estilos para el contenido principal */
+.contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform: rotate(-2deg); /* Aplica rotación al título */
+  line-height: 3.5rem;
+}
+
+.titulo span {
+  margin: 5px 0;
+}
+
+.titulo span:nth-child(1) {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: #FFFFFF; /* Blanco */
+  line-height: 1rem;
+}
+
+.titulo span:nth-child(2) {
+  font-family: 'Molot', sans-serif;
+  color: #00DEFF;
+  font-size: 5rem;
+}
+
+.titulo span:nth-child(3) {
+  font-family: 'Molot', sans-serif;
+  font-size: 5rem;
+  color: #FFFFFF; /* Blanco */
+}
+
+.texto {
+  display: flex;
+  flex-direction: column; /* Coloca los elementos en columnas */
+  align-items: center; /* Centra horizontalmente los elementos */
+  text-align: justify; /* Alinea el texto al centro */
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 5%;
+  color: white;
+}
+
+.texto span {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.texto span:nth-child(1) {
+  margin-bottom: 10px; /* Espacio entre el primer span y el siguiente */
+}
+
+.texto span:nth-child(2) {
+  margin-bottom: 10px; /* Espacio entre el segundo span y el siguiente */
+}
+
+/* Estilos para el botón */
+.boton {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  background-color: #00DEFF;
+  padding: 2% 15%;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Estilos para el texto dentro del botón */
+.boton span {
+  color: #FFFFFF; /* Color del texto del botón */
+  display: block; /* Muestra el texto en bloque */
+  transition: opacity 0.3s ease; /* Transición suave de la opacidad */
+}
+
+/* Estilos para el icono */
+.boton svg {
+  position: absolute; /* Añade posición absoluta para el icono */
+  top: 50%; /* Centra verticalmente el icono */
+  left: 50%; /* Centra horizontalmente el icono */
+  transform: translate(-50%, -50%); /* Ajusta la posición */
+  transition: opacity 0.3s ease; /* Transición suave de la opacidad */
+  opacity: 0; /* Oculta el icono por defecto */
+}
+
+/* Estilos para el botón cuando se activa el hover */
+.boton:hover {
+  background-color: #25D366; /* Cambia el color de fondo al pasar el ratón */
+}
+
+/* Estilos para el texto del botón cuando se activa el hover */
+.boton:hover span {
+  opacity: 0; /* Oculta el texto del botón al pasar el ratón */
+}
+
+/* Estilos para el icono cuando se activa el hover */
+.boton:hover svg {
+  opacity: 1; /* Muestra el icono al pasar el ratón */
+}
+
+@keyframes moveUpDown {
+  0% {
+      transform: translateY(-10px); /* Inicialmente, mueve el elemento hacia arriba */
+  }
+  50% {
+      transform: translateY(10px); /* Luego, mueve el elemento hacia abajo */
+  }
+  100% {
+      transform: translateY(-10px); /* Finalmente, vuelve a la posición inicial */
+  }
+}
+
+.logo_lata {
+  margin-top: 15%; /* Ajusta el margen superior según sea necesario */
+  margin-bottom: 15%; /* Ajusta el margen inferior según sea necesario */
+  animation: moveUpDown 2s ease infinite; /* Aplica la animación al logo de la lata */
+}
+
+/* Ocultar todas las imágenes */
+.contenedor-imagen img {
+  display: none;
+}
+.imagen-adicional-2,
+.imagen-adicional-3,
+.imagen-adicional-4,
+.imagen-adicional-5,
+.imagen-adicional-6,
+.imagen-adicional-7,
+.imagen-adicional-8,
+.imagen-adicional-9 {
+  display: none;
+}
+
+/* Mostrar solo las imágenes deseadas */
+.contenedor-imagen .imagen-adicional-1,
+.contenedor-imagen .imagen-adicional-10 {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.contenedor-imagen-1 {
+  position: absolute; /* Para posicionarla en relación con el contenedor principal */
+  top: 0; /* Ajusta la posición desde la parte superior */
+  right: 0; /* Ajusta la posición desde la parte derecha */
+  width: 50%; /* Ancho de la imagen */
+  height: 100%; /* Altura de la imagen */
+  z-index: -1; /* La imagen estará detrás del contenido principal */
+  overflow: hidden; /* Oculta el contenido que sobresale de los límites */
+}
+
+.contenedor-imagen-10 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.imagen-adicional-10{
+  position: absolute;
+  top: 40%;
+  width: 50%;
+}
+
+/* Estilos para los iconos de redes sociales */
+.iconos {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20%;
+}
+
+/* Estilos para cada icono de redes sociales */
+.icono_ig,
+.icono_fb,
+.icono_x,
+.icono_tt {
+  margin-right: 10px;
+  background-color: #00DEFF; /* Color de fondo */
+  border-radius: 50%; /* Hace que el icono sea un círculo */
+  padding: 8px; /* Reduzco el padding para hacer el círculo más pequeño */
+  width: 45px; /* Ajusto el tamaño del icono */
+  height: 42px; /* Ajusto el tamaño del icono */
+}
+
+/* Estilos para el footer */
+.footer {
+  display: none;
+}
+
+/* Estilos para tablets en orientación vertical */
+@media screen and (min-width: 720px) and (orientation: portrait) {
+  .boton-hamburguesa.abierto + .navegacion {
+  top: 9%;
+  }
+  .header {
+      padding: 5px;
+  }
+  .boton-hamburguesa.abierto {
+      width: 3%;
+      height: 20%;
+      right: 5%;
+  }
+  .navegacion__enlace {
+      font-size: 2rem;
+  }
+}
+
+/* Estilos para pantallas de PC */
+@media screen and (min-width: 1280px) {
+  body {
+      overflow-x: hidden; /* Evita el scroll horizontal */
+  }
+
+  html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+  }
+
+  .body-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      overflow: hidden; /* Para evitar el desplazamiento vertical */
+  }
+
+  .header, .main-content, .footer {
+      flex-shrink: 0; /* Evita que estos elementos se reduzcan */
+  }
+
+  .header {
+      background-color: transparent; /* Elimina el color de fondo del header */  
+      max-width: 100%;
+      position: relative;
+      top: 3%;
+  }
+  
+  .logo {
+      width: 30%; /* Tamaño del logo */
+      position: absolute; /* Posición absoluta para mantener fijo el logo */
+      top: 50%; /* Centra verticalmente el logo */
+      transform: translateY(-50%); /* Ajusta verticalmente el logo */
+      left: 2%; /* Espacio a la izquierda */
+  }
+
+  a {
+      width: 15%;
+      position: relative;
+      left: 2%;
+  }
+
+  .navegacion {
+      display: flex;
+      transform: translateX(0);
+      background-color: transparent;
+      flex-direction: row;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 0;
+      width: 60%;
+      margin-left: 0%;
+      max-width: 2000%;
+  }
+  
+  .navegacion__enlace {
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-right: 0%;
+      margin-left: 0%;
+      flex: 1;
+  } 
+          
+  .boton-hamburguesa {
+      display: none; /* Oculta el botón hamburguesa */
+  }
+
+  img {
+      height: auto;
+      max-width: 100%;
+  }
+
+  .contenido {
+      display: flex; /* Utiliza flexbox para alinear los elementos */
+      justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+      flex-direction: row;
+      align-items: center; /* Centra verticalmente los elementos */
+      padding: 0;
+  }
+
+  .main-content {
+      display: flex; /* Utiliza flexbox para centrar el contenido */
+      justify-content: center; /* Centra horizontalmente el contenido */
+      align-items: center; /* Centra verticalmente el contenido */
+      height: 50vh; /* Establece la altura al 100% del viewport */
+      z-index: 100;
+  }
+  
+  .logo_lata {
+      max-width: 40%; /* Reduzco el tamaño máximo */
+      width: 40vw; /* Reduzco el tamaño */
+      margin-top: 0; /* Elimino el margen superior */
+      margin-bottom: 0; /* Elimino el margen inferior */
+      z-index: 100;
+
+  }
+  .contenedor{
+      z-index: 100;
+  }
+  
+  .contenido__texto {
+      font-size: 0.8rem; /* Reduce el tamaño del texto */
+      margin-right: 20px; /* Reduce el margen derecho */
+      z-index: 100;
+
+  }
+
+  .titulo {
+      line-height: 8.5rem;
+  }
+
+  .titulo span:nth-child(1) {
+      font-size: 4rem;
+      line-height: 1rem;
+  }
+
+  .titulo span:nth-child(2) {
+      font-size: 10rem;
+  }
+  
+  .titulo span:nth-child(3) {
+      font-size: 10rem;
+      line-height: 6rem;
+  }
+
+  .texto {
+      font-size: 1.15rem;
+  }
+  
+  .boton{
+      border-radius: 50px;
+      padding: 2% 5%;
+  }
+
+  .iconos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      left: 15%; /* Alinea horizontalmente con respecto al centro */
+      bottom: 2.5%; /* Ajusta la distancia desde la parte inferior */
+      transform: translateX(-50%); /* Centra horizontalmente */
+      z-index: 999;
+      margin-bottom: 0;
+  }
+  
+  .iconos a {
+      margin: 0 10px; /* Añade margen horizontal entre los iconos */
+  }
+  
+  .footer {
+      display: block;
+      position: fixed;
+      bottom: -1.1rem;
+      left: 0;
+      width: 100%; /* Establece el ancho al 100% */
+      z-index: 101;
+  }
+
+  /* Estilos para la primera imagen adicional */
+
+  @keyframes windAnimation {
+      0% {
+          transform: translateX(-1px) rotate(-1deg);
+      }
+      50% {
+          transform: translateX(1px) rotate(1deg);
+      }
+      100% {
+          transform: translateX(-1px) rotate(-1deg);
+      }
+  }
+  
+  .imagen-adicional-1,
+  .imagen-adicional-2,
+  .imagen-adicional-3,
+  .imagen-adicional-4,
+  .imagen-adicional-5,
+  .imagen-adicional-6,
+  .imagen-adicional-7,
+  .imagen-adicional-8,
+  .imagen-adicional-9,
+  .imagen-adicional-10{
+      animation: windAnimation 2s ease-in-out infinite alternate;
+  }
+  
+  
+  .contenedor-imagen-1 {
+      top: 0%;
+      right: 0%;
+      width: 100%;
+      height: 100%;
+  }
+  
+  .imagen-adicional-1 {
+      position: absolute;
+      top: 5%;
+      left: 35%;
+      width: 50%;
+      height: 95%;
+  }
+
+  .contenedor-imagen-2 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+  }
+  
+  .imagen-adicional-2 {
+      display: block;
+      position: absolute;
+      top: 75%;
+      left: 55%;
+      width: 20%;
+      height: 20%;
+  }
+  
+  .contenedor-imagen-3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+  }
+
+  .imagen-adicional-3 {
+      display: block;
+      position: absolute;
+      top: 80%;
+      left: 50%;
+      width: 23%;
+      height: 23%;
+      z-index: 102;
+  }
+  
+  .contenedor-imagen-4 {
+      position: absolute;
+      top: 0%;
+      right: 0%;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+  }
+  
+  .imagen-adicional-4 {
+      display: block;
+      position: absolute;
+      top: 77%;
+      left: 77%;
+      width: 23%;
+      height: 23%;
+      z-index: 104;
+  }
+  
+  .contenedor-imagen-5 {
+      position: absolute;
+      bottom: 0;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+  }
+  
+  .imagen-adicional-5 {
+      display: block;
+      position: absolute;
+      top: 20%;
+      left: 75%;
+      width: 25%;
+      height: 80%;
+  }
+
+  .contenedor-imagen-6 {
+      position: absolute;
+      bottom: 0;
+      right: 0%;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+  }
+  
+  .imagen-adicional-6 {
+      display: block;
+      position: absolute;
+      top: 75%;
+      left: 65%;
+      width: 20%;
+      height: 25%;
+  }
+
+  .contenedor-imagen-7 {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+  }
+  
+  .imagen-adicional-7 {
+      display: block;
+      position: absolute;
+      top: 75%;
+      left: 75%;
+      width: 20%;
+      height: 25%;
+  }
+  
+  .contenedor-imagen-8 {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+  }
+  
+  .imagen-adicional-8 {
+      display: block;
+      position: absolute;
+      top: 20%;
+      left: 60%;
+      width: 30%;
+      height: 80%;
+  }
+
+  .contenedor-imagen-9 {
+      position: absolute;
+      top: 0%;
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+  }
+  
+  .imagen-adicional-9 {
+      display: block;
+      position: absolute;
+      top: 77%;
+      left: 80%;
+      width: 20%;
+      height: 20%;
+  }
+  
+  .contenedor-imagen-10 {
+      position: absolute;
+      top: 0%;
+      right: 0;
+      left: -1%;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+  }    
+  
+  .imagen-adicional-10 {
+      display: block;
+      position: absolute;
+      top: 30%;
+      left: 0;
+      width: 25%;
+      height: 70%;
+  }
+  
+}
+
+@media screen and (min-width: 1920px) {
+  .header{
+      top: 2%;
+  }
+  
+  .navegacion__enlace {
+      font-size: 1.3rem;
+      margin-left: 0%;
+      margin-right: 2%;
+  }
+
+  .main-content {
+      height: 45vh; /* El 45% de la altura de la ventana */
+  }
+  
+  .contenedor {
+      max-width: 100%; /* El ancho máximo del contenedor es el 100% del ancho de la ventana */
+  }
+
+  .titulo {
+      font-size: calc(3rem + 1vw); /* Tamaño de fuente que aumenta con el tamaño de la ventana */
+      line-height: 10.5rem;
+  }
+  
+  .contenido__texto {
+      font-size: calc(0.8rem + 0.5vw); /* Tamaño de fuente que aumenta con el tamaño de la ventana */
+      margin-right: calc(2% + 1vw); /* Margen derecho que aumenta con el tamaño de la ventana */
+      margin-left: calc(10% + 2vw);
+  }
+  
+  .titulo span:nth-child(1) {
+      font-size: calc(3rem + 1vw); /* Tamaño de fuente relativo */
+      line-height: 0rem;
+  }
+  
+  .titulo span:nth-child(2) {
+      font-size: calc(10rem + 1vw); /* Tamaño de fuente relativo */
+  }
+  
+  .titulo span:nth-child(3) {
+      font-size: calc(10rem + 1vw); /* Tamaño de fuente relativo */
+  }
+  
+
+  .boton {
+      font-size: calc(0.9rem + 0.5vw); /* Tamaño de fuente relativo */
+  }
+
+  .logo_lata {
+      max-width: 40%; /* Ancho máximo del logo como el 30% de la ventana */
+      margin-right: 5%; /* Margen derecho relativo */
+  }
+
+  .imagen-adicional-1{
+      left: 30%;
+  }
+
+  .imagen-adicional-6{
+      top: 70%;
+  }
+
+  .imagen-adicional-7{
+      top: 70%;
+  }
+
+  .imagen-adicional-9 {
+      top: 75%;
+      left: 83%;
+      width: 17%;
+      height: 17%;
+  }
+
+  .iconos {
+      left: 15%;
+      bottom: 4.5%;
+  }
+  
+  .icono_ig, 
+  .icono_fb, 
+  .icono_x, 
+  .icono_tt {
+      padding: 5%;
+      width: 45px;
+      height: 42px;
+  }
+}
+
+@media (min-width: 2000px) {
+  
+}
