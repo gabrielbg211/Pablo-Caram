@@ -7,7 +7,7 @@ body {
 html{
   background-size: cover; /* Cubre todo el contenido */
   max-height: 200rem;
-  background: linear-gradient(to top, #ae48b9, #e478e8);
+  background: linear-gradient(to top, #240922, #d828de);
 }
 
 /* #loader-wrapper {
@@ -112,10 +112,11 @@ img {
 .boton-hamburguesa.abierto + .navegacion {
   transform: translateX(0);
   display: flex;
-  top: 8vh;
+  top: 8vh; /* Ajusta la separación vertical en 8% de la altura de la ventana */
   font-size: 0.99rem;
-  width: 60%;
+  width: 60%; /* Puedes ajustar este valor según sea necesario */
 }
+
 
 /* Estilos para los enlaces del menú de navegación */
 .navegacion__enlace {
@@ -343,10 +344,10 @@ img {
 
 .contenedor-imagen-10 {
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 0;
   width: 100%;
-  height: 90%;
+  height: 70%;
   z-index: -1;
   overflow: hidden;
 }
@@ -361,7 +362,7 @@ img {
 .iconos {
   display: flex;
   justify-content: center;
-  margin-bottom: 20%;
+  margin-bottom: 5%;
 }
 
 /* Estilos para cada icono de redes sociales */
@@ -841,7 +842,6 @@ img {
       top: 0%;
       width: 50%;
       height: 100%;
-  }
   }
 
   .imagen-adicional-6{
