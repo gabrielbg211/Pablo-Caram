@@ -10,3 +10,14 @@ document.addEventListener('DOMContentLoaded', function () {
         menuNavegacion.classList.toggle('abierto');
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function(){
+      document.getElementById('loader-wrapper').style.opacity = 0;
+      setTimeout(function(){
+        document.getElementById('loader-wrapper').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+      }, 500);
+    }, 5000);
+  });
+  
