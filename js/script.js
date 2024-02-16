@@ -12,18 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-    // Después de que se haya cargado completamente el documento HTML
-    document.addEventListener("DOMContentLoaded", function() {
-        // Bloquear el desplazamiento de la página
-        document.body.style.overflow = "hidden";
-        
-        // Simular una carga de 3 segundos (puedes cambiar esto según sea necesario)
-        setTimeout(function() {
-            // Desbloquear el desplazamiento de la página
-            document.body.style.overflow = "";
-            // Ocultar la pantalla de carga
-            document.getElementById("loader-wrapper").style.display = "none";
-        }, 3000); // 3000 milisegundos = 3 segundos
-    });
-
-    
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function(){
+    document.getElementById('loader-wrapper').style.opacity = 0;
+    setTimeout(function(){
+      document.getElementById('loader-wrapper').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 500000000);
+  }, 500000000);
+});
