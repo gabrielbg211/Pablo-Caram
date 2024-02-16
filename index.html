@@ -15,7 +15,13 @@
     <title>Pablo Caram</title>
 
     <style>
-        #loader-wrapper {
+        /* Estilo para bloquear el scroll */
+        .body-scroll-lock {
+            overflow: hidden;
+        }
+
+        @media (min-width: 1280px) {
+            #loader-wrapper {
             position: fixed;
             top: 0;
             left: 0;
@@ -38,13 +44,19 @@
         #content {
             display: none;
         }
+}
     </style>
 </head>
 
 <body>
     <div id="loader-wrapper">
-        <video id="loader-video" src="video/Logo.webm" autoplay loop muted></video>
+        <video id="loader-video" autoplay loop muted>
+            <source src="video/Logo.webm" type="video/webm">
+            <source src="video/Logo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
+    
 
     <header class="header">
         <a href="index.html">

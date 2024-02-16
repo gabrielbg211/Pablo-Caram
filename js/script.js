@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
 document.addEventListener("DOMContentLoaded", function() {
     // Ocultar el loader y mostrar el contenido principal después de un tiempo
     setTimeout(function() {
@@ -19,6 +18,17 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(function() {
             document.getElementById('loader-wrapper').style.display = 'none'; // Ocultar el loader
             document.getElementById('content').style.display = 'block'; // Mostrar el contenido principal
-        }, 500); // Retardo para el efecto de desvanecimiento
-    }, 3000); // Retardo para mostrar el contenido principal, ajusta según tu preferencia
+        }, 1000); // Retardo para el efecto de desvanecimiento
+    }, 3500); // Retardo para mostrar el contenido principal, ajusta según tu preferencia
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Bloquear el scroll durante 4 segundos
+    document.body.classList.add('body-scroll-lock');
+    setTimeout(function() {
+        // Desbloquear el scroll después de 4 segundos
+        document.body.classList.remove('body-scroll-lock');
+    }, 4000); // 4000 milisegundos = 4 segundos
+});
+
