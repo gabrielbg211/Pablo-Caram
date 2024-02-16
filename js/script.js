@@ -18,6 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
     setTimeout(function(){
       document.getElementById('loader-wrapper').style.display = 'none';
       document.getElementById('content').style.display = 'block';
-    }, 50000);
-  }, 50000);
+    }, 5000);
+  }, 5000);
 });
