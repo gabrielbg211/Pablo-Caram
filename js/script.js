@@ -20,5 +20,5 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('loader-wrapper').style.display = 'none'; // Ocultar el loader
             document.getElementById('content').style.display = 'block'; // Mostrar el contenido principal
         }, 500); // Retardo para el efecto de desvanecimiento
-    }, 10000); // Retardo para mostrar el contenido principal, ajusta según tu preferencia
+    }, 5000); // Retardo para mostrar el contenido principal, ajusta según tu preferencia
 });
