@@ -1,31 +1,34 @@
+import numpy as np
 import cv2
 
-def remove_background(video_path, output_path):
+def create_solid_background(width, height, color):
+    background = np.full((height, width, 3), color, dtype=np.uint8)
+    return background
+
+def add_solid_background(video_path, background_color, output_path, target_fps):
     cap = cv2.VideoCapture(video_path)
     if not cap.isOpened():
         print("Error al abrir el video")
         return
     
-    # Inicializar el método de substracción de fondo
-    background_subtractor = cv2.createBackgroundSubtractorMOG2()
+    # Obtener las dimensiones del video y la velocidad de fotogramas original
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
-    # Crear un objeto VideoWriter para guardar el video sin fondo
-    fourcc = cv2.VideoWriter_fourcc(*'VP90')  # Usamos VP9 como códec
-    out = cv2.VideoWriter(output_path, fourcc, 30.0, (int(cap.get(3)), int(cap.get(4))))
+    # Crear una imagen de fondo sólido
+    background = create_solid_background(width, height, background_color)
+
+    # Crear un objeto VideoWriter para guardar el video con fondo sólido
+    fourcc = cv2.VideoWriter_fourcc(*'VP90')  # Cambiado a VP90 para WebM
+    out = cv2.VideoWriter(output_path, fourcc, target_fps, (width, height))
 
     while True:
         ret, frame = cap.read()
         if not ret:
             break
         
-        # Aplicar el método de substracción de fondo al fotograma actual
-        mask = background_subtractor.apply(frame)
-
-        # Invertir la máscara
-        mask = cv2.bitwise_not(mask)
-
-        # Aplicar la máscara al fotograma original
-        result = cv2.bitwise_and(frame, frame, mask=mask)
+        # Superponer el fotograma sobre el fondo sólido
+        result = cv2.addWeighted(frame, 1, background, 0.5, 0)
 
         # Escribir el fotograma procesado al archivo de salida
         out.write(result)
@@ -38,6 +41,9 @@ def remove_background(video_path, output_path):
     out.release()
     cv2.destroyAllWindows()
 
+# Ejemplo de uso:
 video_path = "video/Logo.mov"
-output_path = "video/logo_sin_fondo.webm"
-remove_background(video_path, output_path)
+background_color = (0, 0, 0)  # Color negro (en formato BGR)
+output_path = "video/logo.webm"  # Cambiado a WebM
+target_fps = 30  # Velocidad de fotogramas deseada
+add_solid_background(video_path, background_color, output_path, target_fps)
