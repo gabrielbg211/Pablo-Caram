@@ -11,6 +11,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+    const loaderVideo = document.getElementById('loader-video');
+    const loaderWrapper = document.getElementById('loader-wrapper');
+    const content = document.getElementById('content');
+
+    loaderVideo.addEventListener('ended', function() {
+        loaderWrapper.style.opacity = 0; // Aplicar efecto de desvanecimiento
+        setTimeout(function() {
+            loaderWrapper.style.display = 'none'; // Ocultar el loader
+            content.style.display = 'block'; // Mostrar el contenido principal
+        }, 1000); // Retardo para el efecto de desvanecimiento
+    });
+
+    setTimeout(function() {
+        loaderWrapper.style.opacity = 0; // Aplicar efecto de desvanecimiento
+        setTimeout(function() {
+            loaderWrapper.style.display = 'none'; // Ocultar el loader
+            content.style.display = 'block'; // Mostrar el contenido principal
+        }, 1000); // Retardo para el efecto de desvanecimiento
+    }, loaderVideo.duration * 1000); // Retardo para mostrar el contenido principal después de la duración del video
+});
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Bloquear el scroll durante 4 segundos
     document.body.classList.add('body-scroll-lock');

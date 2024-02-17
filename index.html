@@ -15,6 +15,11 @@
     <title>Pablo Caram</title>
 
     <style>
+        /* Estilo para bloquear el scroll */
+        .body-scroll-lock {
+            overflow: hidden;
+        }
+
         @media (min-width: 1280px) {
             #loader-wrapper {
             position: fixed;
@@ -178,32 +183,6 @@
     </footer>
 
     <!-- Script -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const loaderVideo = document.getElementById('loader-video');
-            const loaderWrapper = document.getElementById('loader-wrapper');
-            const content = document.getElementById('contenido');
-        
-            // Ocultar el contenido y mostrar el loader al principio
-            content.style.display = 'none';
-            loaderWrapper.style.display = 'block';
-        
-            loaderVideo.addEventListener('ended', function() {
-                loaderWrapper.style.opacity = 0; // Aplicar efecto de desvanecimiento
-                setTimeout(function() {
-                    loaderWrapper.style.display = 'none'; // Ocultar el loader
-                    content.style.display = 'block'; // Mostrar el contenido principal
-                }, 1000); // Retardo para el efecto de desvanecimiento
-            });
-        
-            // Retraso para mostrar el contenido principal después del video
-            setTimeout(function() {
-                loaderVideo.play(); // Iniciar el video si aún no se ha iniciado
-                content.style.display = 'block'; // Mostrar el contenido principal
-            }, loaderVideo.duration * 1000); // Retardo para mostrar el contenido principal después de la duración del video
-        });
-        </script>
-        
     <script src="js/script.js"></script>
 </body>
 

@@ -27,11 +27,6 @@
     display: none;
 }
 
-/* Estilo para bloquear el scroll */
-.body-scroll-lock {
-    overflow: hidden;
-}
-
 /* Estilos generales */
 body {
     margin: 0;
