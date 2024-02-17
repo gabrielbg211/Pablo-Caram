@@ -571,6 +571,31 @@ img {
         margin-left: 0%;
         max-width: 2000%;
     }
+
+    .navegacion__enlace {
+        position: relative;
+        display: inline-block;
+        margin: 0 20px;
+        color: white; /* Color del texto del enlace */
+        text-decoration: none;
+    }
+    
+    .navegacion__enlace::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: white; /* Color de resaltado */
+        transition: width 0.3s ease-out, left 0.3s ease-out;
+        transform: translateX(-50%);
+    }
+    
+    .navegacion__enlace:hover::before {
+        width: calc(100% - 50px); /* Ancho completo al pasar el mouse sobre el enlace */
+    }
+    
     .navegacion__enlace {
         color: #fff;
         text-decoration: none;
