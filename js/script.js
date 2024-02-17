@@ -11,10 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+
 document.addEventListener("DOMContentLoaded", function() {
     const loaderVideo = document.getElementById('loader-video');
     const loaderWrapper = document.getElementById('loader-wrapper');
-    const content = document.getElementById('content');
+    const content = document.getElementById('contenido');
 
     loaderVideo.addEventListener('ended', function() {
         loaderWrapper.style.opacity = 0; // Aplicar efecto de desvanecimiento
@@ -24,14 +25,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 1000); // Retardo para el efecto de desvanecimiento
     });
 
+    // Si el video no se carga correctamente, mostrar el contenido después de 5 segundos
     setTimeout(function() {
         loaderWrapper.style.opacity = 0; // Aplicar efecto de desvanecimiento
         setTimeout(function() {
             loaderWrapper.style.display = 'none'; // Ocultar el loader
             content.style.display = 'block'; // Mostrar el contenido principal
         }, 1000); // Retardo para el efecto de desvanecimiento
-    }, loaderVideo.duration * 1000); // Retardo para mostrar el contenido principal después de la duración del video
+    }, 3000); // Esperar 5 segundos antes de mostrar el contenido
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
