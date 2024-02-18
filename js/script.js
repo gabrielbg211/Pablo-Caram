@@ -46,8 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 2800); // Esperar 3 segundos antes de mostrar el contenido
 });
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // Bloquear el scroll durante 4 segundos
     document.body.classList.add('body-scroll-lock');
