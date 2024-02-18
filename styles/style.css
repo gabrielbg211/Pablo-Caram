@@ -616,8 +616,41 @@ img {
         font-weight: 900;
         font-style: normal;
         text-transform: uppercase;
+        position: relative; /* Necesario para posicionar los pseudo-elementos */
     }
     
+    .navegacion__enlace::before,
+    .navegacion__enlace::after {
+        content: ''; /* Necesario para que los pseudo-elementos se muestren */
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        background-color: white;
+        height: 2px; /* Altura de la línea */
+        width: 0; /* Inicialmente la línea estará cerrada */
+        transition: width 0.3s ease-out, left 0.3s ease-out; /* Transición suave */
+    }
+
+    .navegacion__enlace::before {
+        transform: translateX(-0%);
+    }
+
+    .navegacion__enlace::after {
+        transform: translateX(-00%);
+    }
+
+    .navegacion__enlace:hover::before,
+    .navegacion__enlace:hover::after {
+        width: 100%; /* Cuando el mouse está sobre el enlace, la línea se abre */
+        left: 0; /* Para que la línea se abra hacia la izquierda */
+    }
+
+    .navegacion a:nth-child(6):hover::before,
+    .navegacion a:nth-child(6):hover::after {
+        display: none;
+    }
+
+
     .boton-hamburguesa {
         display: none;
         /* Oculta el botón hamburguesa */
