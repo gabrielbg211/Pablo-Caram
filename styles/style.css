@@ -731,7 +731,7 @@ img {
         position: fixed;
         left: 15%;
         /* Alinea horizontalmente con respecto al centro */
-        bottom: 2.5%;
+        bottom: 4.5%;
         /* Ajusta la distancia desde la parte inferior */
         transform: translateX(-50%);
         /* Centra horizontalmente */
