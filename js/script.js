@@ -52,6 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         // Desbloquear el scroll después de 4 segundos
         document.body.classList.remove('body-scroll-lock');
-    }, 4000); // 4000 milisegundos = 4 segundos
+    }, 3000); // 4000 milisegundos = 4 segundos
 });
 
