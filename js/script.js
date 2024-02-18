@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             loaderWrapper.style.display = 'none'; // Ocultar el loader
             content.style.display = 'block'; // Mostrar el contenido principal
         }, 1000); // Retardo para el efecto de desvanecimiento
-    }, 5000); // Esperar 5 segundos antes de mostrar el contenido
+    }, 3000); // Esperar 3 segundos antes de mostrar el contenido
 });
 
 
