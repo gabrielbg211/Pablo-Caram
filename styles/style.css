@@ -33,6 +33,11 @@ body {
     padding: 0;
 }
 
+/* Estilo para bloquear el scroll */
+.body-scroll-lock {
+    overflow: hidden;
+}
+
 html {
     background-size: cover;
     /* Cubre todo el contenido */
@@ -64,10 +69,6 @@ html {
     /* El logotipo puede ocupar hasta la mitad del ancho disponible */
 }
 
-a {
-    width: 50%;
-}
-
 img {
     height: auto;
     /* Mantiene la proporción de aspecto de la imagen */
@@ -97,51 +98,18 @@ img {
 }
 
 
-/* Estilos para el menú de navegación */
-
-.navegacion {
-    display: none;
-    /* Inicialmente oculto */
-    flex-direction: column;
-    /* Mostrar las opciones en vertical */
-    align-items: center;
-    /* Centrar las opciones horizontalmente */
-    position: fixed;
-    /* Posición fija para mantener el menú en la pantalla */
-    top: 0;
-    /* Alinea el menú con la parte superior */
-    right: 0;
-    /* Alinea el menú con el borde derecho de la pantalla */
-    background-color: #98129c;
-    /* Color de fondo del menú */
-    width: 50%;
-    /* Ancho del menú (la mitad de la pantalla) */
-    height: 100vh;
-    /* Alto del menú (alto máximo de la pantalla) */
-    padding: 20px;
-    /* Espaciado interior */
-    z-index: 999;
-    /* Asegura que el menú esté por encima de otros elementos */
-    box-sizing: border-box;
-    /* Incluir el padding en el cálculo del ancho */
-    transform: translateX(100%);
-    /* Comienza fuera de la pantalla */
-    transition: transform 0.3s ease;
-    /* Animación para el despliegue */
-    text-transform: uppercase;
-}
-
-
 /* Estilos para el botón de hamburguesa cuando está abierto */
 
-.boton-hamburguesa.abierto+.navegacion {
+/* Ajusta la disposición de los elementos cuando la navegación está abierta */
+.boton-hamburguesa.abierto + .navegacion {
     transform: translateX(0);
     display: flex;
-    top: 8vh;
-    /* Ajusta la separación vertical en 8% de la altura de la ventana */
+    flex-direction: column; /* Organiza los elementos en columnas */
+    align-items: baseline; /* Centra los elementos horizontalmente */
+    justify-content: flex-start; /* Alinea los elementos en la parte superior */
+    top: 8.2vh;
     font-size: 0.99rem;
-    width: 60%;
-    /* Puedes ajustar este valor según sea necesario */
+    width: 100%;
 }
 
 
@@ -149,38 +117,55 @@ img {
 
 .navegacion__enlace {
     color: #fff;
-    /* Color del texto */
     text-decoration: none;
-    /* Quita el subrayado */
     margin: 5px 0;
-    /* Espaciado entre enlaces */
     font-family: "Poppins", sans-serif;
-    /* Fuente del texto */
     font-weight: 500;
-    /* Peso de la fuente */
     margin-bottom: 10px;
-    width: 100%;
 }
 
 
 /* Estilos para el enlace de inicio de sesión */
 
-.navegacion__enlace.inicio-sesion {
-    order: 6;
-    /* Coloca el enlace de inicio de sesión al final del menú de navegación */
+/* Estilos para el texto del enlace de inicio de sesión */
+.navegacion a:nth-child(6) {
+    display: flex;
+    flex-direction: row;
 }
+/* Definición de la animación */
+@keyframes pulse {
+    0% {
+      transform: scale(1); /* Escala normal */
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2); /* Sin sombra al principio */
+    }
+    50% {
+      transform: scale(1.05); /* Escala un poco más grande */
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    }
+    100% {
+      transform: scale(1); /* Vuelve a la escala normal */
+      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2); /* Sin sombra al final */
+    }
+  }
+  
+  /* Aplicación de la animación al botón de inicio de sesión */
+  .navegacion__enlace.inicio-sesion {
+      animation: pulse 1s infinite alternate; /* Aplica la animación con bucle infinito */
+      padding: 10px 20px; /* Ajusta el relleno para que parezca un botón */
+      border-radius: 5px; /* Añade bordes redondeados */
+      background-color: #00DEFF; /* Color de fondo */
+      color: #FFF; /* Color del texto */
+      text-decoration: none; /* Quita el subrayado del enlace */
+      margin-top: auto; /* Coloca el enlace al final de la columna */
+  }
+  
+  
 
 .navegacion__enlace .icono-svg {
     width: 20px;
     /* Tamaño más pequeño para el icono */
     margin-left: 5px;
     /* Espacio entre el texto y el icono */
-}
-
-.inicio-sesion {
-    display: flex;
-    align-items: center;
-    /* Alinea verticalmente el ícono con el texto */
 }
 
 
@@ -504,6 +489,28 @@ img {
     display: none;
 }
 
+@media (max-width: 1279px) {
+    .navegacion {
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 8.2vh;
+        right: 0;
+        background-color: #98129c;
+        width: 50%;
+        height: 94%;
+        padding: 20px;
+        z-index: 999;
+        box-sizing: border-box;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        text-transform: uppercase;
+    }
+    
+    .a_Logo{
+        width: 50%;
+    }
+}
 
 /* Estilos para tablets en orientación vertical */
 
@@ -514,10 +521,19 @@ img {
     .header {
         padding: 5px;
     }
+
+    .boton-hamburguesa {
+        width: 3%;
+        height: 20%;
+    }
+
+    .navegacion{
+        height: 91%;
+    }
+
     .boton-hamburguesa.abierto {
         width: 3%;
         height: 20%;
-        right: 5%;
     }
     .navegacion__enlace {
         font-size: 2rem;
@@ -557,12 +573,7 @@ img {
         overflow: hidden;
         /* Para evitar el desplazamiento vertical */
     }
-    .header,
-    .main-content,
-    .footer {
-        flex-shrink: 0;
-        /* Evita que estos elementos se reduzcan */
-    }
+
     .header {
         background-color: transparent;
         /* Elimina el color de fondo del header */
@@ -570,6 +581,7 @@ img {
         position: relative;
         top: 3%;
     }
+
     .logo {
         width: 30%;
         /* Tamaño del logo */
@@ -582,40 +594,35 @@ img {
         left: 2%;
         /* Espacio a la izquierda */
     }
-    a {
+
+    .a_Logo{
         width: 15%;
-        position: relative;
-        left: 2%;
-    }
-    .navegacion {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        position: unset;
-        background-color: transparent;
-        width: 65%;
-        height: unset;
-        padding: 0;
-        transform: translateX(-1%);
+        margin-left: 2%;
     }
 
-    .navegacion__enlace {
+    .navegacion {
         display: flex;
-        font-size: 13px;
-        justify-content: center;
-        align-items: stretch;
-        flex-direction: row;
+        justify-content: flex-end; /* Centra los enlaces horizontalmente */
+        align-items: center; /* Centra los enlaces verticalmente */
+        max-width: 100%; /* Ajusta el ancho al 100% */
     }
     
-    .navegacion__enlace .icono-svg {
-        width: 10%;
-        margin-left: 0px;
+    .navegacion__enlace {
+        display: inline-block;
+        margin: 0 10px;
+        text-decoration: none;
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-style: normal;
+        text-transform: uppercase;
     }
     
     .boton-hamburguesa {
         display: none;
         /* Oculta el botón hamburguesa */
     }
+    
     img {
         height: auto;
         max-width: 100%;
@@ -623,12 +630,10 @@ img {
     .contenido {
         display: flex;
         /* Utiliza flexbox para alinear los elementos */
-        justify-content: space-between;
+        justify-content: space-evenly;
         /* Distribuye los elementos a lo largo del contenedor */
         flex-direction: row;
         align-items: center;
-        /* Centra verticalmente los elementos */
-        padding: 0;
     }
     .main-content {
         display: flex;
@@ -654,6 +659,7 @@ img {
     }
     .contenedor {
         z-index: 100;
+        max-width: 100%;
     }
     .contenido__texto {
         font-size: 0.8rem;
@@ -917,149 +923,14 @@ img {
     #content {
         display: none;
     }
-    .header {
-        top: 2%;
-    }
-    .navegacion {
-        width: 55%;
-        transform: translateX(-2%);
-    }
 
-    .navegacion__enlace{
-        font-size: 17px;
-    }
-
-    .navegacion__enlace .icono-svg {
-        width: 15%;
-    }
-
-    .main-content {
-        height: 40%;
-        /* El 45% de la altura de la ventana */
-    }
     .contenedor {
         max-width: 100%;
-        /* El ancho máximo del contenedor es el 100% del ancho de la ventana */
-    }
-    .titulo {
-        font-size: calc(3rem + 1vw);
-        /* Tamaño de fuente que aumenta con el tamaño de la ventana */
-        line-height: 10.5rem;
-    }
-    .contenido__texto {
-        font-size: calc(0.8rem + 0.5vw);
-        /* Tamaño de fuente que aumenta con el tamaño de la ventana */
-        margin-right: calc(2% + 1vw);
-        /* Margen derecho que aumenta con el tamaño de la ventana */
-        margin-left: calc(10% + 2vw);
-    }
-    .titulo span:nth-child(1) {
-        font-size: calc(3rem + 1vw);
-        /* Tamaño de fuente relativo */
-        line-height: 0rem;
-    }
-    .titulo span:nth-child(2) {
-        font-size: calc(10rem + 1vw);
-        /* Tamaño de fuente relativo */
-    }
-    .titulo span:nth-child(3) {
-        font-size: calc(10rem + 1vw);
-        /* Tamaño de fuente relativo */
-    }
-    .boton {
-        font-size: calc(0.9rem + 0.5vw);
-        /* Tamaño de fuente relativo */
-    }
-    .logo_lata {
-        max-width: 40%;
-        /* Ancho máximo del logo como el 30% de la ventana */
-        margin-right: 5%;
-        /* Margen derecho relativo */
-    }
-    .imagen-adicional-1 {
-        left: 30%;
-        position: absolute;
-        top: 0%;
-        width: 50%;
-        height: 100%;
-    }
-    .imagen-adicional-6 {
-        top: 70%;
-    }
-    .imagen-adicional-7 {
-        top: 70%;
-    }
-    .imagen-adicional-9 {
-        top: 75%;
-        left: 83%;
-        width: 17%;
-        height: 17%;
-    }
-    .iconos {
-        left: 15%;
-        bottom: 4.5%;
-    }
-    .icono_ig,
-    .icono_fb,
-    .icono_x,
-    .icono_tt {
-        padding: 5%;
-        width: 45px;
-        height: 42px;
     }
 }
 
 @media (min-width: 2300px) {
-    .navegacion {
-        width: 65%;
-        transform: translateX(-2%);
-    }
 
-    .navegacion__enlace {
-        font-size: 25px;
-    }
-
-    .main-content{
-        height: 50vh;
-    }
-
-    .titulo {
-        line-height: 16rem;
-    }
-
-    .titulo span:nth-child(1) {
-        font-size: calc(5rem + 1vw);
-        line-height: 0rem;
-    }
-
-    .titulo span:nth-child(2) {
-        font-size: calc(14rem + 1vw);
-    }
-
-    .titulo span:nth-child(3) {
-        font-size: calc(14rem + 1vw);
-    }
-
-    .texto {
-        font-size: 1.8rem;
-    }
-
-    .boton {
-        font-size: calc(2rem + 0.5vw);
-        padding: 2% 10%;
-    }
-
-    .boton svg {
-        height: 100%;
-        width: 30%;
-    }
-
-    .icono_ig, 
-    .icono_fb, 
-    .icono_x, 
-    .icono_tt {
-        width: 90px;
-    }
 }
 
 @media (min-width: 3200px) {
@@ -1072,7 +943,7 @@ img {
         font-size: 35px;
         margin: 0;
     }
-    
+
     .iconos a {
         margin: 0px 25px;
     }

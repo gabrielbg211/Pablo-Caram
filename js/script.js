@@ -11,6 +11,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+const botonHamburguesa = document.getElementById('boton-hamburguesa');
+const navegacion = document.getElementById('navegacion');
+const body = document.body;
+
+botonHamburguesa.addEventListener('click', () => {
+    // Alternar la clase 'abierto' al hacer clic en el botón de hamburguesa
+    navegacion.classList.toggle('abierto');
+    // Agregar o eliminar la clase 'body-scroll-lock' al body
+    body.classList.toggle('body-scroll-lock');
+});
+
 
 document.addEventListener("DOMContentLoaded", function() {
     const loaderVideo = document.getElementById('loader-video');
@@ -32,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             loaderWrapper.style.display = 'none'; // Ocultar el loader
             content.style.display = 'block'; // Mostrar el contenido principal
         }, 1000); // Retardo para el efecto de desvanecimiento
-    }, 3000); // Esperar 5 segundos antes de mostrar el contenido
+    }, 5000); // Esperar 5 segundos antes de mostrar el contenido
 });
 
 
