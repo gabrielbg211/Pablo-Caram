@@ -248,6 +248,7 @@ img {
     color: #FFFFFF;
     /* Blanco */
     line-height: 1rem;
+    text-transform: uppercase;
 }
 
 .titulo span:nth-child(2) {
