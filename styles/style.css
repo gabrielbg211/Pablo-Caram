@@ -972,6 +972,10 @@ img {
     .contenedor {
         max-width: 100%;
     }
+
+    .main-content {
+        height: 35vh;
+    }
 }
 
 @media (min-width: 2300px) {
