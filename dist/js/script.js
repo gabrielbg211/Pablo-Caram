@@ -75,3 +75,32 @@ if (window.location.pathname === '/Login.php') {
     document.getElementById('boton-hamburguesa').style.display = 'none';
     document.getElementById('navegacion').style.display = 'none';
 }
+
+
+// Netlify Config
+
+const { exec } = require('child_process');
+
+exports.handler = async function (event, context) {
+  // Obtener la ruta del archivo PHP desde la solicitud HTTP
+  const phpFile = event.path.replace(/^\/\.netlify\/functions\/[^/]+/, '');
+
+  return new Promise((resolve, reject) => {
+    // Ejecutar el archivo PHP y capturar la salida
+    exec(`php ${phpFile}`, (error, stdout, stderr) => {
+      if (error) {
+        // Manejar errores
+        reject({
+          statusCode: 500,
+          body: JSON.stringify({ error: 'Error al ejecutar el archivo PHP' }),
+        });
+      } else {
+        // Devolver la salida del archivo PHP
+        resolve({
+          statusCode: 200,
+          body: stdout,
+        });
+      }
+    });
+  });
+};
