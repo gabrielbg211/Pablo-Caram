@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build" # o el comando que utilizas para construir tu proyecto
-  publish = "source" # especifica la ruta relativa al directorio raíz del repositorio
+  command = "npm run build"
+  publish = "source"
 
 [[redirects]]
   from = "/*"
