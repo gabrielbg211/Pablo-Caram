@@ -6,7 +6,7 @@
         <span class="hamburguesa-icono"></span>
     </button>
     <nav class="navegacion" id="navegacion">
-        <a href="nosotros.html" class="navegacion__enlace">Nuestro Equipo</a>
+        <a href="#" class="navegacion__enlace">Nuestro Equipo</a>
         <a href="#" class="navegacion__enlace">Novedades</a>
         <a href="#" class="navegacion__enlace">artistas</a>
         <a href="#" class="navegacion__enlace">contactos</a>
