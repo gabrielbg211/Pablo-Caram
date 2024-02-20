@@ -1,7 +1,3 @@
-[build]
-  command = "npm run build"
-  publish = "source"
-
 [[redirects]]
   from = "/*"
   to = "/index.php"
