@@ -1,4 +1,0 @@
-[[redirects]]
-from = "/build/*"
-to = "/index.php"
-status = 200
