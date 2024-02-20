@@ -1,1 +1,4 @@
-/* /index.php 200
+[[redirects]]
+from = "/build/*"
+to = "/index.php"
+status = 200
