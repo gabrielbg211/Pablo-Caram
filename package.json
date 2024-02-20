@@ -1,9 +1,0 @@
-{
-    "name": "PABLO-CARAM",
-    "version": "1.0.0",
-    "description": "Proyecto de Pablo Caram",
-    "scripts": {
-      "build": "echo 'No se requiere ningún comando de construcción para este proyecto'"
-    }
-  }
-  
