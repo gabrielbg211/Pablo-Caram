@@ -1,5 +1,5 @@
 <!-- Imágenes adicionales -->
-    <div class="contenedor-imagen-1">
+<div class="contenedor-imagen-1">
         <img src="img/2.webp" alt="" class="imagen-adicional-1">
     </div>
 
@@ -36,5 +36,5 @@
     </div>
 
     <div class="contenedor-imagen-10">
-        <img src="img/10.webp" alt="" class="imagen-adicional-10">
+        <img src=".0./img/10.webp" alt="" class="imagen-adicional-10">
     </div>
