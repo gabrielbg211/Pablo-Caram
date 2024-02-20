@@ -21,19 +21,23 @@
 #loader-video {
     max-width: 100%;
     max-height: 100%;
-}        
+}
 
 #content {
     display: none;
 }
 
+
 /* Estilos generales */
+
 body {
     margin: 0;
     padding: 0;
 }
 
+
 /* Estilo para bloquear el scroll */
+
 .body-scroll-lock {
     overflow: hidden;
 }
@@ -100,13 +104,18 @@ img {
 
 /* Estilos para el botón de hamburguesa cuando está abierto */
 
+
 /* Ajusta la disposición de los elementos cuando la navegación está abierta */
-.boton-hamburguesa.abierto + .navegacion {
+
+.boton-hamburguesa.abierto+.navegacion {
     transform: translateX(0);
     display: flex;
-    flex-direction: column; /* Organiza los elementos en columnas */
-    align-items: baseline; /* Centra los elementos horizontalmente */
-    justify-content: flex-start; /* Alinea los elementos en la parte superior */
+    flex-direction: column;
+    /* Organiza los elementos en columnas */
+    align-items: baseline;
+    /* Centra los elementos horizontalmente */
+    justify-content: flex-start;
+    /* Alinea los elementos en la parte superior */
     top: 8.2vh;
     font-size: 0.99rem;
     width: 100%;
@@ -127,39 +136,57 @@ img {
 
 /* Estilos para el enlace de inicio de sesión */
 
+
 /* Estilos para el texto del enlace de inicio de sesión */
+
 .navegacion a:nth-child(6) {
     display: flex;
     flex-direction: row;
 }
+
+
 /* Definición de la animación */
+
 @keyframes pulse {
     0% {
-      transform: scale(1); /* Escala normal */
-      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2); /* Sin sombra al principio */
+        transform: scale(1);
+        /* Escala normal */
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+        /* Sin sombra al principio */
     }
     50% {
-      transform: scale(1.05); /* Escala un poco más grande */
-      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+        transform: scale(1.05);
+        /* Escala un poco más grande */
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        /* Sombra más pronunciada */
     }
     100% {
-      transform: scale(1); /* Vuelve a la escala normal */
-      box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2); /* Sin sombra al final */
+        transform: scale(1);
+        /* Vuelve a la escala normal */
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.2);
+        /* Sin sombra al final */
     }
-  }
-  
-  /* Aplicación de la animación al botón de inicio de sesión */
-  .navegacion__enlace.inicio-sesion {
-      animation: pulse 1s infinite alternate; /* Aplica la animación con bucle infinito */
-      padding: 10px 20px; /* Ajusta el relleno para que parezca un botón */
-      border-radius: 5px; /* Añade bordes redondeados */
-      background-color: #00DEFF; /* Color de fondo */
-      color: #FFF; /* Color del texto */
-      text-decoration: none; /* Quita el subrayado del enlace */
-      margin-top: auto; /* Coloca el enlace al final de la columna */
-  }
-  
-  
+}
+
+
+/* Aplicación de la animación al botón de inicio de sesión */
+
+.navegacion__enlace.inicio-sesion {
+    animation: pulse 1s infinite alternate;
+    /* Aplica la animación con bucle infinito */
+    padding: 10px 20px;
+    /* Ajusta el relleno para que parezca un botón */
+    border-radius: 5px;
+    /* Añade bordes redondeados */
+    background-color: #00DEFF;
+    /* Color de fondo */
+    color: #FFF;
+    /* Color del texto */
+    text-decoration: none;
+    /* Quita el subrayado del enlace */
+    margin-top: auto;
+    /* Coloca el enlace al final de la columna */
+}
 
 .navegacion__enlace .icono-svg {
     width: 20px;
@@ -507,11 +534,11 @@ img {
         transition: transform 0.3s ease;
         text-transform: uppercase;
     }
-    
-    .a_Logo{
+    .a_Logo {
         width: 50%;
     }
 }
+
 
 /* Estilos para tablets en orientación vertical */
 
@@ -522,16 +549,13 @@ img {
     .header {
         padding: 5px;
     }
-
     .boton-hamburguesa {
         width: 3%;
         height: 20%;
     }
-
-    .navegacion{
+    .navegacion {
         height: 91%;
     }
-
     .boton-hamburguesa.abierto {
         width: 3%;
         height: 20%;
@@ -547,7 +571,7 @@ img {
 @media screen and (min-width: 1280px) {
     body {
         overflow-x: hidden;
-        /* Evita el scroll horizontal */
+        overflow-y: hidden;
     }
     html,
     body {
@@ -574,7 +598,6 @@ img {
         overflow: hidden;
         /* Para evitar el desplazamiento vertical */
     }
-
     .header {
         background-color: transparent;
         /* Elimina el color de fondo del header */
@@ -582,7 +605,6 @@ img {
         position: relative;
         top: 3%;
     }
-
     .logo {
         width: 30%;
         /* Tamaño del logo */
@@ -595,19 +617,19 @@ img {
         left: 2%;
         /* Espacio a la izquierda */
     }
-
-    .a_Logo{
+    .a_Logo {
         width: 15%;
         margin-left: 2%;
     }
-
     .navegacion {
         display: flex;
-        justify-content: flex-end; /* Centra los enlaces horizontalmente */
-        align-items: center; /* Centra los enlaces verticalmente */
-        max-width: 100%; /* Ajusta el ancho al 100% */
+        justify-content: flex-end;
+        /* Centra los enlaces horizontalmente */
+        align-items: center;
+        /* Centra los enlaces verticalmente */
+        max-width: 100%;
+        /* Ajusta el ancho al 100% */
     }
-    
     .navegacion__enlace {
         display: inline-block;
         margin: 0 10px;
@@ -617,46 +639,45 @@ img {
         font-weight: 900;
         font-style: normal;
         text-transform: uppercase;
-        position: relative; /* Necesario para posicionar los pseudo-elementos */
+        position: relative;
+        /* Necesario para posicionar los pseudo-elementos */
     }
-    
     .navegacion__enlace::before,
     .navegacion__enlace::after {
-        content: ''; /* Necesario para que los pseudo-elementos se muestren */
+        content: '';
+        /* Necesario para que los pseudo-elementos se muestren */
         position: absolute;
         left: 50%;
         bottom: 0;
         background-color: white;
-        height: 2px; /* Altura de la línea */
-        width: 0; /* Inicialmente la línea estará cerrada */
-        transition: width 0.3s ease-out, left 0.3s ease-out; /* Transición suave */
+        height: 2px;
+        /* Altura de la línea */
+        width: 0;
+        /* Inicialmente la línea estará cerrada */
+        transition: width 0.3s ease-out, left 0.3s ease-out;
+        /* Transición suave */
     }
-
     .navegacion__enlace::before {
         transform: translateX(-0%);
     }
-
     .navegacion__enlace::after {
         transform: translateX(-00%);
     }
-
     .navegacion__enlace:hover::before,
     .navegacion__enlace:hover::after {
-        width: 100%; /* Cuando el mouse está sobre el enlace, la línea se abre */
-        left: 0; /* Para que la línea se abra hacia la izquierda */
+        width: 100%;
+        /* Cuando el mouse está sobre el enlace, la línea se abre */
+        left: 0;
+        /* Para que la línea se abra hacia la izquierda */
     }
-
     .navegacion a:nth-child(6):hover::before,
     .navegacion a:nth-child(6):hover::after {
         display: none;
     }
-
-
     .boton-hamburguesa {
         display: none;
         /* Oculta el botón hamburguesa */
     }
-    
     img {
         height: auto;
         max-width: 100%;
@@ -689,12 +710,10 @@ img {
         margin-bottom: 0;
         z-index: 100;
     }
-
     .contenedor {
         z-index: 100;
         max-width: 100%;
     }
-    
     .contenido__texto {
         position: relative;
         left: 5%;
@@ -702,11 +721,9 @@ img {
         margin-right: 20px;
         z-index: 100;
     }
-    
     .titulo {
         line-height: 8.5rem;
     }
-
     .titulo span:nth-child(1) {
         font-size: 4rem;
         line-height: 1rem;
@@ -782,14 +799,12 @@ img {
         width: 100%;
         height: 100%;
     }
-
     .imagen-adicional-1 {
         position: absolute;
         right: 25%;
         max-height: 100%;
         max-width: 100%;
     }
-
     .contenedor-imagen-2 {
         position: absolute;
         top: 73%;
@@ -799,7 +814,6 @@ img {
         z-index: -1;
         overflow: hidden;
     }
-
     .imagen-adicional-2 {
         display: block;
         position: absolute;
@@ -808,7 +822,6 @@ img {
         max-height: 100%;
         max-width: 100%;
     }
-
     .contenedor-imagen-3 {
         position: absolute;
         top: 75%;
@@ -817,7 +830,6 @@ img {
         height: 25%;
         overflow: hidden;
     }
-
     .imagen-adicional-3 {
         display: block;
         position: absolute;
@@ -827,7 +839,6 @@ img {
         max-width: 100%;
         z-index: 102;
     }
-
     .contenedor-imagen-4 {
         position: absolute;
         top: calc(76% - 5vh);
@@ -836,7 +847,6 @@ img {
         height: 29%;
         overflow: hidden;
     }
-
     .imagen-adicional-4 {
         display: block;
         position: absolute;
@@ -846,7 +856,6 @@ img {
         max-width: 100%;
         z-index: 104;
     }
-
     .contenedor-imagen-5 {
         position: absolute;
         top: 20%;
@@ -855,7 +864,6 @@ img {
         z-index: -1;
         overflow: hidden;
     }
-
     .imagen-adicional-5 {
         display: block;
         position: absolute;
@@ -863,7 +871,6 @@ img {
         max-height: 100%;
         max-width: 100%;
     }
-
     .contenedor-imagen-6 {
         position: absolute;
         bottom: 0;
@@ -873,7 +880,6 @@ img {
         z-index: -1;
         overflow: hidden;
     }
-
     .imagen-adicional-6 {
         display: block;
         position: absolute;
@@ -881,7 +887,6 @@ img {
         max-height: 100%;
         max-width: 100%;
     }
-
     .contenedor-imagen-7 {
         position: absolute;
         bottom: 0%;
@@ -891,7 +896,6 @@ img {
         z-index: -1;
         overflow: hidden;
     }
-
     .imagen-adicional-7 {
         display: block;
         position: absolute;
@@ -899,7 +903,6 @@ img {
         max-height: 100%;
         max-width: 100%;
     }
-
     .contenedor-imagen-8 {
         position: absolute;
         bottom: 0%;
@@ -909,7 +912,6 @@ img {
         z-index: -2;
         overflow: hidden;
     }
-
     .imagen-adicional-8 {
         display: block;
         position: absolute;
@@ -917,7 +919,6 @@ img {
         max-height: 100%;
         max-width: 100%;
     }
-    
     .contenedor-imagen-9 {
         position: absolute;
         bottom: 0%;
@@ -927,7 +928,6 @@ img {
         z-index: -2;
         overflow: hidden;
     }
-    
     .imagen-adicional-9 {
         display: block;
         position: absolute;
@@ -935,7 +935,6 @@ img {
         max-height: 100%;
         max-width: 100%;
     }
-
     .contenedor-imagen-10 {
         position: absolute;
         top: 0%;
@@ -945,7 +944,6 @@ img {
         z-index: -1;
         overflow: hidden;
     }
-
     .imagen-adicional-10 {
         display: block;
         position: absolute;
@@ -969,31 +967,25 @@ img {
     #content {
         display: none;
     }
-
     .contenedor {
         max-width: 100%;
     }
-
     .main-content {
         height: 35vh;
     }
 }
 
-@media (min-width: 2300px) {
-
-}
+@media (min-width: 2300px) {}
 
 @media (min-width: 3200px) {
     .navegacion {
         width: 65%;
         transform: translateX(-3%);
     }
-
     .navegacion__enlace {
         font-size: 35px;
         margin: 0;
     }
-
     .iconos a {
         margin: 0px 25px;
     }
