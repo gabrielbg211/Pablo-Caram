@@ -1,3 +1,7 @@
+[build]
+  command = "npm run build" # o el comando que utilizas para construir tu proyecto
+  publish = "source" # especifica la ruta relativa al directorio raíz del repositorio
+
 [[redirects]]
   from = "/*"
   to = "/index.php"
