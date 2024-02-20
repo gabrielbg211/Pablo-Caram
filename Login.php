@@ -5,15 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="styles/login.css" />
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="icon" type="image/webp" href="img/ICONO WEB.ico">
     <title>Iniciar sesión y Registro</title>
   </head>
+  <style>
+        /* Estilo para bloquear el scroll */
+        .body-scroll-lock {
+            overflow: hidden;
+        }
+
+        @media (min-width: 1280px) {
+            #loader-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s;
+        }
+        
+        #loader-video {
+            max-width: 50%;
+            max-height: 50%;
+        }
+      }
+    </style>
   <body>
-    <div class="logo-container">
-        <a href="index.html"><img src="img/LOGO CARAM STUDIO.png" alt="Logo" class="logo" /></a>
-      </div>
+  <?php include 'source/loader.php'; ?>
+
+  <?php include 'source/header.php'; ?>
+
     
     <div class="container">
       <div class="forms-container">
@@ -95,19 +124,12 @@
       </div>
     </div>
 
-    <img src="img/2.png" alt="" class="imagen-adicional-1">
-        <img src="img/5.png" alt="" class="imagen-adicional-2">
-        <img src="img/8.png" alt="" class="imagen-adicional-3">
-        <img src="img/9.png" alt="" class="imagen-adicional-4">
-        <img src="img/3.png" alt="" class="imagen-adicional-5">
-        <img src="img/7.png" alt="" class="imagen-adicional-6">
-        <img src="img/9.png" alt="" class="imagen-adicional-7">
-        <img src="img/4.png" alt="" class="imagen-adicional-8">
-        <img src="img/6.png" alt="" class="imagen-adicional-9">
-        <img src="img/6.png" alt="" class="imagen-adicional-10">
-        <img src="img/10.png" alt="" class="imagen-adicional-11">
-    <img class="footer" src="img/1.png" alt="">
+    <!-- Imágenes adicionales -->
+    <?php include 'source/background.php'; ?>
 
-    <script src="js/login.js"></script>
+    <!-- Footer -->
+    <?php include 'source/footer.php'; ?>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
