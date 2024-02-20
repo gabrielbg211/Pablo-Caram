@@ -1,0 +1,3 @@
+[build]
+  publish = "/"
+  command = "echo 'No se requiere un comando de construcción para PHP'"  # No se necesita un comando de construcción para PHP
