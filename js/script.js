@@ -55,52 +55,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 3000); // 4000 milisegundos = 4 segundos
 });
 
-// Login
+// Obtener la página actual
+const currentPage = window.location.pathname;
 
-const sign_in_btn = document.querySelector("#sign-in-btn");
-const sign_up_btn = document.querySelector("#sign-up-btn");
-const container = document.querySelector(".container");
-
-sign_up_btn.addEventListener("click", () => {
-  container.classList.add("sign-up-mode");
-});
-
-sign_in_btn.addEventListener("click", () => {
-  container.classList.remove("sign-up-mode");
-});
-
-// Verifica si la página actual es 'Login.php'
-if (window.location.pathname === '/Login.php') {
-    // Si es 'Login.php', ocultamos el botón y la navegación
-    document.getElementById('boton-hamburguesa').style.display = 'none';
-    document.getElementById('navegacion').style.display = 'none';
+// Verificar si la página actual es el login
+if (currentPage === "/Login.php") {
+    // Ocultar el botón de hamburguesa
+    const botonHamburguesa = document.getElementById("boton-hamburguesa");
+    botonHamburguesa.style.display = "none";
+    
+    // Ocultar la navegación
+    const navegacion = document.getElementById("navegacion");
+    navegacion.style.display = "none";
 }
-
-
-// Netlify Config
-
-const { exec } = require('child_process');
-
-exports.handler = async function (event, context) {
-  // Obtener la ruta del archivo PHP desde la solicitud HTTP
-  const phpFile = event.path.replace(/^\/\.netlify\/functions\/[^/]+/, '');
-
-  return new Promise((resolve, reject) => {
-    // Ejecutar el archivo PHP y capturar la salida
-    exec(`php ${phpFile}`, (error, stdout, stderr) => {
-      if (error) {
-        // Manejar errores
-        reject({
-          statusCode: 500,
-          body: JSON.stringify({ error: 'Error al ejecutar el archivo PHP' }),
-        });
-      } else {
-        // Devolver la salida del archivo PHP
-        resolve({
-          statusCode: 200,
-          body: stdout,
-        });
-      }
-    });
-  });
-};
