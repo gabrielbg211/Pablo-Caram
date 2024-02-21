@@ -1,30 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-
-html, body {
-  height: 100%;
+* {
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
 
 .container {
   position: relative;
   width: 100%;
-  background-color: purple;
+  background-color: rgb(0, 0, 0);
   min-height: 100vh;
   overflow: hidden;
 }
 
 .forms-container {
+  position: absolute;
+  width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
 }
-
 
 .signin-signup {
   position: absolute;
@@ -63,10 +64,6 @@ form.sign-in-form {
   font-size: 2.2rem;
   color: rgb(255, 255, 255);
   margin-bottom: 10px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-  text-transform: uppercase;
 }
 
 .input-field {
@@ -108,10 +105,6 @@ form.sign-in-form {
 .social-text {
   padding: 0.7rem 0;
   font-size: 1rem;
-  color: white;
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .social-media {
@@ -141,7 +134,7 @@ form.sign-in-form {
 
 .btn {
   width: 150px;
-  background-color: rgba(126, 0, 255, 0.5); /* Color con 50% de transparencia */
+  background-color: #ff0000;
   border: none;
   outline: none;
   height: 49px;
@@ -155,10 +148,8 @@ form.sign-in-form {
 }
 
 .btn:hover {
-  background-color: rgba(70, 31, 110, 0.6); /* Color con 60% de transparencia */
+  background-color: #ff0000;
 }
-
-
 .panels-container {
   position: absolute;
   height: 100%;
@@ -172,17 +163,16 @@ form.sign-in-form {
 .container:before {
   content: "";
   position: absolute;
-  height: 1800px;
-  width: 1800px;
+  height: 2000px;
+  width: 2000px;
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, rgba(51, 0, 255, 0.5) 0%, rgba(255, 0, 0, 0.5) 100%);
+  background-image: linear-gradient(-45deg, #ff0000 0%, #ff0000 100%);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
   z-index: 6;
 }
-
 
 .image {
   width: 100%;
@@ -407,150 +397,4 @@ form.sign-in-form {
     bottom: 28%;
     left: 50%;
   }
-}
-
-@keyframes oscilar {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-.imagen-adicional-1 {
-  position: fixed;
-  bottom: 10px;
-  right: 550px; 
-  width: 550px;
-  height: auto;
-  margin-top: 10px;
-  animation: oscilar 5s ease-in-out infinite; /* 5s para la duración total de la animación */
-  z-index: 1;
-}
-
-.imagen-adicional-2 {
-  position: fixed;  
-  bottom: -50px;
-  right: 650px; 
-  width: 400px;
-  height: auto;
-  margin-top: 10px;
-  animation: oscilar 5s ease-in-out infinite; /* 5s para la duración total de la animación */
-  z-index: 1;
-}
-
-.imagen-adicional-3 {
-  position: fixed;  
-  bottom: -10px;
-  right: 730px;; 
-  width: 400px;
-  height: auto;
-  margin-top: 10px;
-  animation: oscilar 5s ease-in-out infinite; /* 5s para la duración total de la animación */
-  z-index: 4;
-}
-
-
-.imagen-adicional-4 {
-  position: fixed;  
-  bottom: -10px;
-  right: 0px;
-  width: 300px;
-  height: auto;
-  margin-top: 10px;
-  animation: oscilar 5s ease-in-out infinite; /* 5s para la duración total de la animación */
-  z-index: 4;
-}
-
-.imagen-adicional-5 {
-  position: fixed;  
-  bottom: 2px;
-  right: 0px;
-  width: 400px;
-  height: auto;
-  margin-top: 10px;
-  animation: oscilar 5s ease-in-out infinite; /* 5s para la duración total de la animación */
-}
-
-.imagen-adicional-6 {
-  position: fixed;  
-  bottom: 2px;
-  right: 450px;
-  width: 350px;
-  height: auto;
-  margin-top: 10px;
-  z-index: 1;
-  animation: oscilar 5s ease-in-out infinite; /* 5s para la duración total de la animación */
-}
-
-.imagen-adicional-7 {
-  position: fixed;  
-  bottom: 2px;
-  right: 0px;
-  width: 400px;
-  height: auto;
-  margin-top: 10px;
-  animation: oscilar 5s ease-in-out infinite; /* 5s para la duración total de la animación */
-}
-
-.imagen-adicional-8 {
-  position: fixed;  
-  bottom: 1px;
-  top: 10px;
-  right: 100px;
-  width: 750px;
-  height: auto;
-  animation: oscilar 5s ease-in-out infinite; /* 5s para la duración total de la animación */
-}
-
-.imagen-adicional-9 {
-  position: fixed;  
-  bottom: 1px;
-  top: 600px;
-  right: 250px;
-  width: 400px;
-  height: auto;
-  animation: oscilar 5s ease-in-out infinite; /* 5s para la duración total de la animación */
-}
-
-.imagen-adicional-10 {
-  position: fixed;  
-  bottom: 1px;
-  top: 600px;
-  right: 50px;
-  width: 400px;
-  height: auto;
-  z-index: -2;
-  animation: oscilar 5s ease-in-out infinite; /* 5s para la duración total de la animación */
-}
-
-.imagen-adicional-11 {
-  position: fixed;  
-  bottom: 1px;
-  left: 0px;
-  width: 300px;
-  height: auto;
-  z-index: 1;
-  animation: oscilar 5s ease-in-out infinite; /* 5s para la duración total de la animación */
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 10%;
-  width: 100%;
-  z-index: 1;
-}
-
-.logo-container {
-  position: fixed;
-  top: -25px;
-  left: 85px;
-  padding: 10px; /* Ajusta el espaciado según sea necesario */
-  z-index: 9999; /* Asegura que el logo esté en la parte superior */
-}
-
-.logo {
-  width: 150px;
-  height: auto;
-  margin-right: auto;
 }
