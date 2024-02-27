@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         // Desbloquear el scroll después de 4 segundos
         document.body.classList.remove('body-scroll-lock');
-    }, 3000); // 4000 milisegundos = 4 segundos
+    }, 2800); // 4000 milisegundos = 4 segundos
 });
 
 // Obtener la página actual
@@ -82,3 +82,24 @@ sign_up_btn.addEventListener("click", () => {
 sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
+
+document.querySelector('.sign-up-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var formData = new FormData(this);
+    fetch('source/registro.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        // Si el registro es exitoso, mostrar un mensaje y redirigir al index.php
+        alert(data.message);
+        window.location.href = 'index.php';
+      } else {
+        // Si hay un error, mostrar el mensaje de error
+        alert(data.message);
+      }
+    })
+    .catch(error => console.error('Error:', error));
+  });
