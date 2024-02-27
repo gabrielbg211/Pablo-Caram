@@ -681,6 +681,75 @@ img {
         height: auto;
         max-width: 100%;
     }
+
+    .dashboard-dropdown {
+        position: relative;
+    }
+    .dashboard-dropdown-content {
+        display: none;
+        position: absolute;
+        min-width: 160px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        z-index: 1;
+        padding: 8px 0;
+        border-radius: 4px;
+        background-color: #00DEFF;
+        overflow: hidden;
+        top: 100%; /* Alinear el contenido debajo del botón */
+        opacity: 0; /* Inicialmente ocultar el contenido */
+        animation: dropdownShow 0.5s forwards; /* Animación para mostrar el contenido */
+    }
+    
+    .dashboard-dropdown:hover .dashboard-dropdown-content {
+        display: block;
+    }
+    
+    .dashboard-dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+    }
+    
+    .dashboard-dropdown-content a:hover {
+        background-color: #f2f2f2;
+    }
+    
+    @keyframes dropdownShow {
+        from {
+            top: 0; /* Desde la parte superior */
+            opacity: 0; /* Con opacidad cero */
+        }
+        to {
+            top: 100%; /* Hasta la posición original */
+            opacity: 1; /* Con opacidad completa */
+        }
+    }
+    
+    
+    /* Estilos para el ícono */
+    .dashboard-dropdown .icono-svg {
+        vertical-align: middle;
+        margin-left: 5px; /* Ajusta el espaciado entre el texto y el ícono */
+    }
+
+
+    /* Estilos adicionales para los botones */
+    .dashboard-button {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    #dashboard-link:hover::before,
+    #dashboard-link:hover::after {
+        display: none;
+    }
+    
     .contenido {
         display: flex;
         /* Utiliza flexbox para alinear los elementos */

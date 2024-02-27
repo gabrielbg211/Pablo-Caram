@@ -103,3 +103,30 @@ document.querySelector('.sign-up-form').addEventListener('submit', function(even
     })
     .catch(error => console.error('Error:', error));
   });
+
+  // Cerrar el menú desplegable si el usuario hace clic fuera de él
+window.onclick = function(event) {
+    if (!event.target.matches('.dashboard-dropdown')) {
+      var dropdowns = document.getElementsByClassName("dashboard-dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var dropdownContainer = document.getElementById('dropdown-container');
+    var dropdownContent = document.getElementById('dropdown-content');
+
+    dropdownContainer.addEventListener('click', function () {
+        if (dropdownContent.clientHeight === 0) {
+            dropdownContent.style.height = dropdownContent.scrollHeight + 'px';
+        } else {
+            dropdownContent.style.height = 0;
+        }
+    });
+});
