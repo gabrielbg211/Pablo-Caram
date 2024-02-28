@@ -1,4 +1,4 @@
-<?php include 'conexion.php'; ?>
+<?php include 'source/conexion.php'; ?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
