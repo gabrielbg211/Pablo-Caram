@@ -36,11 +36,11 @@ if (isset($_POST['usuario']) && isset($_POST['email']) && isset($_POST['contrase
         $response['success'] = false;
         $response['message'] = "El correo electrónico ya está registrado. Por favor, utilice otro.";
     } else {
-        // Hashear la contraseña antes de almacenarla en la base de datos
+        // Hashear la password antes de almacenarla en la base de datos
         $contrasena_hasheada = password_hash($contrasena, PASSWORD_DEFAULT);
         
         // Insertar los datos en la base de datos
-        $sql_insert = "INSERT INTO usuarios (nombre_usuario, email, contraseña) VALUES ('$usuario', '$email', '$contrasena_hasheada')";
+        $sql_insert = "INSERT INTO usuarios (nombre_usuario, email, password) VALUES ('$usuario', '$email', '$contrasena_hasheada')";
         
         if (mysqli_query($conn, $sql_insert)) {
             // Registro exitoso

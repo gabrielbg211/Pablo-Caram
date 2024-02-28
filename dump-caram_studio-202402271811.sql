@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_usuario` varchar(50) NOT NULL,
-  `contraseña` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `unique_usuario` (`nombre_usuario`),

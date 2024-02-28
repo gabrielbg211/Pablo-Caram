@@ -38,16 +38,16 @@ if (isset($_SESSION['alert_displayed']) && $_SESSION['alert_displayed'] === true
         $result = mysqli_stmt_get_result($stmt);
         
         if (mysqli_num_rows($result) == 1) {
-            // Usuario encontrado, verificar la contraseña
+            // Usuario encontrado, verificar la password
             $row = mysqli_fetch_assoc($result);
-            if (password_verify($contrasena, $row['contraseña'])) {
-                // Contraseña correcta, iniciar sesión y redirigir al usuario
+            if (password_verify($contrasena, $row['password'])) {
+                // password correcta, iniciar sesión y redirigir al usuario
                 $_SESSION['usuario'] = $row['nombre_usuario']; // Puedes almacenar más información del usuario si lo deseas
                 header("Location: ../index.php"); // Redirigir al usuario a la página principal
                 exit();
             } else {
-                // Contraseña incorrecta
-                $message = "Usuario o contraseña incorrecta";
+                // password incorrecta
+                $message = "Usuario o password incorrecta";
                 $_SESSION['alert_displayed'] = true; // Marcar que se ha mostrado la alerta
                 echo "<script>alert('$message');</script>"; // Mostrar alerta con JavaScript
                 echo "<script>window.location.href = '../Login.php';</script>"; // Redirigir a Login.php con JavaScript
@@ -55,7 +55,7 @@ if (isset($_SESSION['alert_displayed']) && $_SESSION['alert_displayed'] === true
             }
         } else {
             // Usuario no encontrado
-            $message = "Usuario o contraseña incorrecta";
+            $message = "Usuario o password incorrecta";
             $_SESSION['alert_displayed'] = true; // Marcar que se ha mostrado la alerta
             echo "<script>alert('$message');</script>"; // Mostrar alerta con JavaScript
             echo "<script>window.location.href = '../Login.php';</script>"; // Redirigir a Login.php con JavaScript
