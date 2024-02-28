@@ -59,3 +59,4 @@ if (isset($_POST['usuario']) && isset($_POST['email']) && isset($_POST['contrase
     // Devolver la respuesta como JSON
     echo json_encode($response);
 }
+?>

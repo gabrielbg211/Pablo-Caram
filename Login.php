@@ -44,27 +44,27 @@
 <div class="container">
   <div class="forms-container">
     <div class="signin-signup">
-    <form action="source/conexion.php" class="sign-in-form" method="POST">
-    <h2 class="title">Iniciar sesión</h2>
-    <div class="input-field">
-        <i class="fas fa-user"></i>
-        <input type="text" placeholder="Usuario o Correo Electrónico" name="usuario" />
-    </div>
-    <div class="input-field">
-        <i class="fas fa-lock"></i>
-        <input type="password" placeholder="Contraseña" name="contrasena" />
-    </div>
-    <input type="submit" value="Login" class="btn solid" />
-    <p class="social-text">Iniciar sesión con plataformas sociales</p>
-    <div class="social-media">
-        <a href="#" class="social-icon">
-            <i class="fab fa-facebook-f"></i>
-        </a>
-        <a href="#" class="social-icon">
-            <i class="fab fa-google"></i>
-        </a>
-    </div>
-</form>
+      <form action="source/conexion.php" class="sign-in-form" method="POST">
+        <h2 class="title">Iniciar sesión</h2>
+        <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Usuario o Correo Electrónico" name="usuario" />
+        </div>
+        <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Contraseña" name="contrasena" />
+        </div>
+        <input type="submit" value="Login" class="btn solid" />
+        <p class="social-text">Iniciar sesión con plataformas sociales</p>
+        <div class="social-media">
+            <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+            </a>
+        </div>
+      </form>
       <form action="source/registro.php" class="sign-up-form" method="POST">
         <h2 class="title">Registrate</h2>
         <div class="input-field">
