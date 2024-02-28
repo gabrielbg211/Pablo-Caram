@@ -1092,7 +1092,7 @@ img {
       }
       
       .input-field input::placeholder {
-        color: rgb(207, 178, 178);
+        color: black;
         font-weight: 500;
       }
       
