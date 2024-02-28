@@ -1,13 +1,14 @@
 <?php
 session_start();
 
-$servername = "localhost";
-$username = "gabriel";
-$password = "root";
-$database = "caram_studio";
+$servername = "roundhouse.proxy.rlwy.net";
+$username = "root";
+$password = "Ea6ge6CDfdAHaGF2E6DFb1FDA6EbDHEh";
+$database = "railway";
+$db_port = "30344";
 
 // Crear la conexión
-$conn = mysqli_connect($servername, $username, $password, $database);
+$conn = mysqli_connect($servername, $username, $password, $database, $db_port);
 
 // Verificar la conexión
 if (!$conn) {
