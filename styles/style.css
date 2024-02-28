@@ -1088,9 +1088,11 @@ img {
         line-height: 1;
         font-weight: 600;
         font-size: 1.1rem;
-      }
+        color: black !important;      
+    }
       
       .input-field input::placeholder {
+        color: black !important;
         font-weight: 500;
       }
       
