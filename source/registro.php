@@ -5,10 +5,10 @@ $password = "root";
 $database = "caram_studio";
 
 // Crear la conexión
-$db = mysqli_connect($servername, $username, $password, $database);
+$conn = mysqli_connect($servername, $username, $password, $database);
 
 // Verificar la conexión
-if (!$db) {
+if (!$conn) {
     die("Error de conexión: " . mysqli_connect_error());
 }
 
@@ -23,8 +23,8 @@ if (isset($_POST['usuario']) && isset($_POST['email']) && isset($_POST['contrase
     $sql_usuario = "SELECT * FROM usuarios WHERE nombre_usuario = '$usuario'";
     $sql_email = "SELECT * FROM usuarios WHERE email = '$email'";
     
-    $result_usuario = mysqli_query($db, $sql_usuario);
-    $result_email = mysqli_query($db, $sql_email);
+    $result_usuario = mysqli_query($conn, $sql_usuario);
+    $result_email = mysqli_query($conn, $sql_email);
     
     // Verificar si ya existe el usuario o el email
     if (mysqli_num_rows($result_usuario) > 0) {
@@ -40,14 +40,14 @@ if (isset($_POST['usuario']) && isset($_POST['email']) && isset($_POST['contrase
         // Insertar los datos en la base de datos
         $sql_insert = "INSERT INTO usuarios (nombre_usuario, email, contraseña) VALUES ('$usuario', '$email', '$contrasena_hasheada')";
         
-        if (mysqli_query($db, $sql_insert)) {
+        if (mysqli_query($conn, $sql_insert)) {
             // Registro exitoso
             $response['success'] = true;
             $response['message'] = "Registro exitoso";
         } else {
             // Error al insertar en la base de datos
             $response['success'] = false;
-            $response['message'] = "Error al registrar usuario: " . mysqli_error($db);
+            $response['message'] = "Error al registrar usuario: " . mysqli_error($conn);
         }        
     }
     // Devolver la respuesta como JSON
@@ -59,3 +59,4 @@ if (isset($_POST['usuario']) && isset($_POST['email']) && isset($_POST['contrase
     // Devolver la respuesta como JSON
     echo json_encode($response);
 }
+?>

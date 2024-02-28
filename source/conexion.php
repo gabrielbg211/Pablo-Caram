@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'source/registro.php'; // O incluye el archivo que contiene la conexión a la base de datos
+include 'registro.php'; // O incluye el archivo que contiene la conexión a la base de datos
 
 // Verificar si el usuario está logeado
 if (isset($_SESSION['usuario'])) {
