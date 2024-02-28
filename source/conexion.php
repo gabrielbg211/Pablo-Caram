@@ -63,4 +63,3 @@ if (isset($_SESSION['alert_displayed']) && $_SESSION['alert_displayed'] === true
         }
     }
 }
-?>

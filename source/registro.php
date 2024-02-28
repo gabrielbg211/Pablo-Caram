@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$servername = "localhost";
-$username = "gabriel";
-$password = "root";
-$database = "caram_studio";
+$servername = "railway"; // Reemplaza con el nombre del servidor proporcionado por Railway
+$username = "root"; // Reemplaza con el nombre de usuario proporcionado por Railway
+$password = "Ea6ge6CDfdAHaGF2E6DFb1FDA6EbDHEh"; // Reemplaza con la contraseña proporcionada por Railway
+$database = "railway"; // Reemplaza con el nombre de la base de datos proporcionado por Railway
 
 // Crear la conexión
 $conn = mysqli_connect($servername, $username, $password, $database);
@@ -64,4 +64,3 @@ if (isset($_POST['usuario']) && isset($_POST['email']) && isset($_POST['contrase
     // Devolver la respuesta como JSON
     echo json_encode($response);
 }
-?>
