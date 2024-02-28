@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header" id="dashboard-header">
     <a class="a_Logo" href="index.php">
         <img class="header__logo" src="img/LOGO CARAM STUDIO.webp" alt="Logotipo">
     </a>

@@ -1,0 +1,140 @@
+#dashboard-header .boton-hamburguesa,
+#dashboard-header .navegacion {
+    display: none;
+}
+
+.redes{
+    display: none;
+}
+
+.wrapper {
+    display: flex; /* Utilizar flexbox */
+    height: calc(100% - 100px - 100px); /* Altura total - altura del header - altura del footer */
+
+
+}
+
+.d-menu {
+    display: flex;
+    flex-direction: column;
+    width: 25%; /* El menú ocupa el 25% de la pantalla */
+    background-color: transparent; /* Color de fondo del menú */
+    border-right: 1px solid #e0e0e0; /* Borde derecho gris claro */
+    z-index: 105;
+    color: white; /* Cambiar el color del texto a blanco */
+    font-size: 18px; /* Cambiar el tamaño del texto */
+    margin-left: 3%; /* Ajusta el valor del margen según sea necesario */
+}
+
+.menu-option {
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    color: white; /* Cambiar el color del texto a blanco */
+    font-size: 18px; /* Cambiar el tamaño del texto */
+}
+
+
+.submenu {
+    display: none;
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.submenu a {
+    text-decoration: none;
+    color: black;
+}
+
+.d-content {
+    flex-grow: 1; /* El contenido ocupa todo el espacio restante */
+    background-color: transparent; /* Color de fondo del contenido principal */
+    z-index: 105;
+
+}
+
+.search-container {
+    margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
+}
+
+.search-container input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Tamaño de fuente del buscador */
+}
+
+.search-container button {
+    padding: 8px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Tamaño de fuente del botón */
+}
+
+.search-container button:hover {
+    background: #45a049;
+}
+
+
+.contenido-inicio {
+    width: 100%;
+    height: 35%;
+    background-color: black;
+}
+
+.otro-inicio {
+    width: 100%;
+    height: calc(100% - 35%);
+    background-color: gray; /* Cambia el color según tus necesidades */
+}
+
+.contenido-lanzamientos {
+    width: 100%;
+    height: 35%;
+    background-color: rgb(165, 138, 138);
+}
+
+.otro-lanzamientos {
+    width: 100%;
+    height: calc(100% - 35%);
+    background-color: rgb(189, 141, 141); /* Cambia el color según tus necesidades */
+}
+
+.contenido-ganancias {
+    width: 100%;
+    height: 35%;
+    background-color: #7fb3d5; /* Azul claro */
+}
+
+.otro-ganancias {
+    width: 100%;
+    height: calc(100% - 35%);
+    background-color: #b7d8ff; /* Azul claro más claro */
+}
+
+.contenido-estadisticas {
+    width: 100%;
+    height: 35%;
+    background-color: #f5a3a3; /* Rosa claro */
+}
+
+.otro-estadisticas {
+    width: 100%;
+    height: calc(100% - 35%);
+    background-color: #f2bfbf; /* Rosa claro más claro */
+}
+
+.contenido-transacciones {
+    width: 100%;
+    height: 35%;
+    background-color: #9bd3c6; /* Verde agua */
+}
+
+.otro-transacciones {
+    width: 100%;
+    height: calc(100% - 35%);
+    background-color: #c3e9dd; /* Verde agua más claro */
+}

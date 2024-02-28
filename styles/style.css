@@ -602,7 +602,7 @@ img {
         /* Elimina el color de fondo del header */
         max-width: 100%;
         position: relative;
-        top: 3%;
+        top: 0%;
     }
     .logo {
         width: 30%;
