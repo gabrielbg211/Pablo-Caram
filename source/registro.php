@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$servername = "railway"; // Reemplaza con el nombre del servidor proporcionado por Railway
-$username = "root"; // Reemplaza con el nombre de usuario proporcionado por Railway
-$password = "Ea6ge6CDfdAHaGF2E6DFb1FDA6EbDHEh"; // Reemplaza con la contraseña proporcionada por Railway
-$database = "railway"; // Reemplaza con el nombre de la base de datos proporcionado por Railway
+$servername = "localhost";
+$username = "gabriel";
+$password = "root";
+$database = "caram_studio";
 
 // Crear la conexión
 $conn = mysqli_connect($servername, $username, $password, $database);
