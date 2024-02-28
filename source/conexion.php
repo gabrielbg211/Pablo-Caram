@@ -2,11 +2,11 @@
 session_start();
 
 // Definir las variables de conexión
-$DB_HOST = "localhost";
-$DB_USER = "gabriel";
-$DB_PASSWORD = "root";
-$DB_NAME = "caram_studio";
-$DB_PORT = 3306; // Puerto predeterminado para MySQL
+$DB_HOST = "roundhouse.proxy.rlwy.net";
+$DB_USER = "root";
+$DB_PASSWORD = "Ea6ge6CDfdAHaGF2E6DFb1FDA6EbDHEh";
+$DB_NAME = "railway";
+$DB_PORT = 30344; // Puerto predeterminado para MySQL
 
 // Inicializar mensaje vacío
 $message = "";
