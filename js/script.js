@@ -84,25 +84,30 @@ sign_in_btn.addEventListener("click", () => {
 });
 
 document.querySelector('.sign-up-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    var formData = new FormData(this);
-    fetch('source/registro.php', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-      if (data.success) {
-        // Si el registro es exitoso, mostrar un mensaje y redirigir al index.php
-        alert(data.message);
+  event.preventDefault();
+  var formData = new FormData(this);
+  fetch('source/registro.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      // Si el registro es exitoso, mostrar un mensaje y redirigir al script de inicio de sesión
+      alert(data.message);
+      
+      // Redirigir al usuario a index.php después de un breve retraso
+      setTimeout(function() {
         window.location.href = 'index.php';
-      } else {
-        // Si hay un error, mostrar el mensaje de error
-        alert(data.message);
-      }
-    })
-    .catch(error => console.error('Error:', error));
-  });
+      }, 500); // Retraso de 500 milisegundos (0.5 segundos)
+    } else {
+      // Si hay un error, mostrar el mensaje de error
+      alert(data.message);
+    }
+  })
+  .catch(error => console.error('Error:', error));
+});
+
 
   // Cerrar el menú desplegable si el usuario hace clic fuera de él
 window.onclick = function(event) {

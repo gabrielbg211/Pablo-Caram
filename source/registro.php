@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 $servername = "localhost";
 $username = "gabriel";
 $password = "root";
@@ -44,6 +46,9 @@ if (isset($_POST['usuario']) && isset($_POST['email']) && isset($_POST['contrase
             // Registro exitoso
             $response['success'] = true;
             $response['message'] = "Registro exitoso";
+            
+            // Iniciar sesión del nuevo usuario
+            $_SESSION['usuario'] = $usuario;
         } else {
             // Error al insertar en la base de datos
             $response['success'] = false;
