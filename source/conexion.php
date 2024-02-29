@@ -1,6 +1,4 @@
 <?php
-// Iniciar la sesión
-session_start();
 
 // Definir las variables de conexión
 $servername = "roundhouse.proxy.rlwy.net";
