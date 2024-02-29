@@ -1,4 +1,6 @@
+<?php include 'source/estado.php'; ?>
 <?php include 'source/conexion.php'; ?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -104,7 +106,7 @@
           Registrate
         </button>
       </div>
-      <img src="img/log.svg" class="image" alt="" />
+      <!-- <img src="img/log.svg" class="image" alt="" /> -->
     </div>
     <div class="panel right-panel">
       <div class="content">
@@ -116,7 +118,7 @@
           Iniciar sesión
         </button>
       </div>
-      <img src="img/register.svg" class="image" alt="" />
+      <!-- <img src="img/register.svg" class="image" alt="" /> -->
     </div>
   </div>
 </div>

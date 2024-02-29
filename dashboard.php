@@ -1,3 +1,7 @@
+<?php include 'source/estado.php'; ?>
+<?php include 'source/conexion.php'; ?>
+<?php include_once 'source/check_sesion.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +11,7 @@
     <link rel="preload" href="styles/style.css" as="style">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/dashboard.css">
-    <link rel="preload" href="js/script.js" as="script">
+    <link rel="preload" href="js/dashboard.js" as="script">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -131,6 +135,5 @@
 
     <!-- Script -->
     <script src="js/dashboard.js"></script>
-    <script src="js/script.js"></script>
 </body>
 </html>
