@@ -82,12 +82,37 @@
         </div>    
         <div id="inicio" class="d-content">
             <div class="contenido-inicio">
-                <!-- Contenido principal aquí -->
+                <div class="half-width left-content">
+                    <img src="img/profile.webp" alt="Foto" class="photo">
+                </div>
+                <div class="half-width right-content">
+                    <div class="column-container">
+                        <!-- Contenedor para el icono y el texto 1 -->
+                        <div class="icon-text-container">
+                            <!-- Icono -->
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="blue" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                            </svg>
+                            <!-- Texto 1 -->
+                            <p>Texto 1</p>
+                        </div>
+                        <!-- Texto 2 -->
+                        <p>Texto 2</p>
+                        <!-- Texto 3 -->
+                        <p>Texto 3</p>
+                        <!-- Botones -->
+                        <div class="button-container">
+                            <button>Botón 1</button>
+                            <button>Botón 2</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="otro-inicio">
                 <!-- Otro contenido aquí -->
             </div>
         </div>
+
 
         <div id="lanzamientos" class="d-content" style="display: none;">
             <div class="contenido-lanzamientos">
