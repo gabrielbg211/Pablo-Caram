@@ -1,6 +1,5 @@
 <?php include 'source/estado.php'; ?>
 <?php include 'source/conexion.php'; ?>
-<?php include 'source/ini.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">

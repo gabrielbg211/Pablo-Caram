@@ -1,5 +1,4 @@
 <?php include 'source/estado.php'; ?>
-<?php include 'source/ini.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
