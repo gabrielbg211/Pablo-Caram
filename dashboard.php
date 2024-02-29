@@ -1,6 +1,5 @@
 <?php include 'source/estado.php'; ?>
 <?php include 'source/conexion.php'; ?>
-<?php include_once 'source/check_sesion.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

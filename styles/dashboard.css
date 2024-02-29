@@ -94,13 +94,13 @@
 .contenido-lanzamientos {
     width: 100%;
     height: 35%;
-    background-color: rgb(165, 138, 138);
+    /* background-color: rgb(165, 138, 138); */
 }
 
 .otro-lanzamientos {
     width: 100%;
     height: calc(100% - 35%);
-    background-color: rgb(189, 141, 141); /* Cambia el color según tus necesidades */
+    /* background-color: rgb(189, 141, 141); */
 }
 
 .contenido-ganancias {
@@ -118,13 +118,13 @@
 .contenido-estadisticas {
     width: 100%;
     height: 35%;
-    background-color: #f5a3a3; /* Rosa claro */
+    /* background-color: #f5a3a3; */
 }
 
 .otro-estadisticas {
     width: 100%;
     height: calc(100% - 35%);
-    background-color: #f2bfbf; /* Rosa claro más claro */
+    /* background-color: #f2bfbf;  */
 }
 
 .contenido-transacciones {
