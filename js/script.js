@@ -22,20 +22,6 @@ botonHamburguesa.addEventListener('click', () => {
     body.classList.toggle('body-scroll-lock');
 });
 
-// Obtener la página actual
-const currentPage = window.location.pathname;
-
-// Verificar si la página actual es el login
-if (currentPage === "/Login.php") {
-    // Ocultar el botón de hamburguesa
-    const botonHamburguesa = document.getElementById("boton-hamburguesa");
-    botonHamburguesa.style.display = "none";
-    
-    // Ocultar la navegación
-    const navegacion = document.getElementById("navegacion");
-    navegacion.style.display = "none";
-}
-
 
 document.addEventListener("DOMContentLoaded", function() {
     const loaderVideo = document.getElementById('loader-video');
