@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Establecer el tiempo máximo de vida de la sesión en 5 minutos (300 segundos)
 ini_set('session.gc_maxlifetime', 300);
 

@@ -1,5 +1,6 @@
 <?php include 'source/estado.php'; ?>
 <?php include 'source/conexion.php'; ?>
+<?php include 'source/ini.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -7,6 +8,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <link rel="preload" href="styles/style.css" as="style">
     <link rel="stylesheet" href="styles/style.css"/>
     <link rel="icon" type="image/webp" href="img/ICONO WEB.ico">
     <title>Iniciar sesión y Registro</title>
@@ -129,7 +131,7 @@
 <!-- Footer -->
 <?php include 'source/footer.php'; ?>
 
-<script src="js/script.js"></script>
+<script src="js/login.js"></script>
 
 </body>
 </html>

@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", function() {
         loaderWrapper.style.opacity = 0; // Aplicar efecto de desvanecimiento
         setTimeout(function() {
             loaderWrapper.style.display = 'none'; // Ocultar el loader
-            content.style.display = 'block'; // Mostrar el contenido principal
         }, 1000); // Retardo para el efecto de desvanecimiento
     }, 2800); // Esperar 3 segundos antes de mostrar el contenido
 });
@@ -69,46 +68,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2800); // 4000 milisegundos = 4 segundos
 });
 
-// Login
-
-const sign_in_btn = document.querySelector("#sign-in-btn");
-const sign_up_btn = document.querySelector("#sign-up-btn");
-const container = document.querySelector(".container");
-
-sign_up_btn.addEventListener("click", () => {
-  container.classList.add("sign-up-mode");
-});
-
-sign_in_btn.addEventListener("click", () => {
-  container.classList.remove("sign-up-mode");
-});
-
-document.querySelector('.sign-up-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  var formData = new FormData(this);
-  fetch('source/registro.php', {
-    method: 'POST',
-    body: formData
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      // Si el registro es exitoso, mostrar un mensaje y redirigir al script de inicio de sesión
-      alert(data.message);
-      
-      // Redirigir al usuario a index.php después de un breve retraso
-      setTimeout(function() {
-        window.location.href = 'index.php';
-      }, 500); // Retraso de 500 milisegundos (0.5 segundos)
-    } else {
-      // Si hay un error, mostrar el mensaje de error
-      alert(data.message);
-    }
-  })
-  .catch(error => console.error('Error:', error));
-});
-
-
   // Cerrar el menú desplegable si el usuario hace clic fuera de él
 window.onclick = function(event) {
     if (!event.target.matches('.dashboard-dropdown')) {
@@ -121,18 +80,4 @@ window.onclick = function(event) {
       }
     }
   }
-  
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var dropdownContainer = document.getElementById('dropdown-container');
-    var dropdownContent = document.getElementById('dropdown-content');
-
-    dropdownContainer.addEventListener('click', function () {
-        if (dropdownContent.clientHeight === 0) {
-            dropdownContent.style.height = dropdownContent.scrollHeight + 'px';
-        } else {
-            dropdownContent.style.height = 0;
-        }
-    });
-});
 

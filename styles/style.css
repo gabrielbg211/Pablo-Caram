@@ -79,6 +79,9 @@ img {
     max-width: 100vw;
     /* Establece un ancho máximo basado en el ancho de la ventana */
 }
+.dashboard-dropdown-content {
+    display: none;
+}
 
 
 /* Estilos para el contenido principal */
@@ -1186,6 +1189,7 @@ img {
         justify-content: space-around;
         text-align: center;
         z-index: 6;
+        height: 50%;
       }
       
       .left-panel {
