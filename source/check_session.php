@@ -10,3 +10,4 @@ if(isset($_SESSION['usuario'])) {
     header("Location: dashboard.php");
     exit(); // Asegúrate de que el script se detenga después de redirigir
 }
+?>
