@@ -1,4 +1,5 @@
 <?php include 'source/estado.php'; ?>
+<?php include 'source/dash_session.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +109,68 @@
                 </div>
             </div>
             <div class="otro-inicio">
-                <!-- Otro contenido aquí -->
+                <h2>Lanzamientos</h2>
+                <div class="row">
+                    <div class="column identifier"></div>
+                    <div class="column title_row">Titulo</div>
+                    <div class="column release-id">ID de lanzamiento</div>
+                    <div class="column upc">UPC</div>
+                    <div class="column isrc">ISRC</div>
+                    <div class="column release-date">Fecha de lanzamiento</div>
+                </div>
+                <div class="row">
+                    <div class="column identifier">1</div>
+                    <div class="column title-img">
+                        <div class="image-container">
+                            <img src="img/LOGO CARAM STUDIO.webp" alt="Nombre de la canción">
+                        </div>
+                        canciónasfasfasfasfasfasfas
+                    </div>
+                    <div class="column release-id">578513</div>
+                    <div class="column upc">1872798</div>
+                    <div class="column isrc">1AS5AS84</div>
+                    <div class="column release-date">24/02/2024</div>
+                </div>
+                <div class="row">
+                    <div class="column identifier">1</div>
+                    <div class="column title-img">
+                        <div class="image-container">
+                            <img src="img/LOGO CARAM STUDIO.webp" alt="Nombre de la canción">
+                        </div>
+                        canciónasfasfasfasfa
+                    </div>
+                    <div class="column release-id">578513</div>
+                    <div class="column upc">1872798</div>
+                    <div class="column isrc">1AS5AS84</div>
+                    <div class="column release-date">24/02/2024</div>
+                </div>
+                <div class="row">
+                    <div class="column identifier">1</div>
+                    <div class="column title-img">
+                        <div class="image-container">
+                            <img src="img/LOGO CARAM STUDIO.webp" alt="Nombre de la canción">
+                        </div>
+                        canciónasfasfasfasfasfasfasasa
+                    </div>
+                    <div class="column release-id">578513</div>
+                    <div class="column upc">1872798</div>
+                    <div class="column isrc">1AS5AS84</div>
+                    <div class="column release-date">24/02/2024</div>
+                </div>
+                <div class="row">
+                    <div class="column identifier">1</div>
+                    <div class="column title-img">
+                        <div class="image-container">
+                            <img src="img/LOGO CARAM STUDIO.webp" alt="Nombre de la canción">
+                        </div>
+                        canciónasfasfasfasfasfasfasasfas
+                    </div>
+                    <div class="column release-id">578513</div>
+                    <div class="column upc">1872798</div>
+                    <div class="column isrc">1AS5AS84</div>
+                    <div class="column release-date">24/02/2024</div>
+                </div>
+
             </div>
         </div>
 

@@ -1,5 +1,6 @@
 <?php include 'source/estado.php'; ?>
 <?php include 'source/conexion.php'; ?>
+<?php include 'source/check_session.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -18,28 +19,28 @@
         overflow: hidden;
     }
 
-    @media (min-width: 1280px) {
-        #loader-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        opacity: 1;
-        transition: opacity 0.5s;
+      @media (min-width: 1280px) {
+          #loader-wrapper {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #000;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+          opacity: 1;
+          transition: opacity 0.5s;
+      }
+      
+      #loader-video {
+          max-width: 50%;
+          max-height: 50%;
+      }
     }
-    
-    #loader-video {
-        max-width: 50%;
-        max-height: 50%;
-    }
-  }
-</style>
+  </style>
 <body>
 <?php include 'source/loader.php'; ?>
 <?php include 'source/header.php'; ?>
