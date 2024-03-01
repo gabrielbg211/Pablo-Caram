@@ -51,6 +51,8 @@ function search() {
 }
 
 function showSection(sectionId) {
+    console.log("Se ha seleccionado la sección:", sectionId);
+
     // Ocultar todas las secciones de contenido
     var sections = document.querySelectorAll('.d-content');
     sections.forEach(function(section) {
@@ -62,5 +64,63 @@ function showSection(sectionId) {
     if (selectedSection) {
         selectedSection.style.display = 'block';
     }
+
+    // Quitar la clase 'bold' de todos los títulos de sección
+    var sectionTitles = document.querySelectorAll('.menu-option');
+    sectionTitles.forEach(function(title) {
+        title.classList.remove('bold');
+    });
+
+    // Agregar la clase 'bold' al título de la sección seleccionada
+    var selectedTitle = document.getElementById(sectionId + '-title');
+    if (selectedTitle) {
+        selectedTitle.classList.add('bold');
+    }
 }
+
+// Al cargar la página, ejecutar la función para mostrar la sección 'inicio' por defecto
+window.onload = function() {
+    showSection('inicio');
+};
+
+document.addEventListener("DOMContentLoaded", function() {
+    const rowsPerPage = 4; // Número de filas por página
+    let currentPage = 1; // Página actual, iniciando en la primera
+
+    const rows = document.querySelectorAll('.colored-rows'); // Todas las filas a paginar
+    const numPages = Math.ceil(rows.length / rowsPerPage); // Número total de páginas
+
+    // Función para mostrar las filas correspondientes a la página actual
+    function showPage(page) {
+        const startIndex = (page - 1) * rowsPerPage; // Índice de inicio de las filas en esta página
+        const endIndex = startIndex + rowsPerPage; // Índice de fin de las filas en esta página
+
+        rows.forEach((row, index) => {
+            if (index >= startIndex && index < endIndex) {
+                row.style.display = 'table-row'; // Mostrar fila si está en el rango de la página actual
+            } else {
+                row.style.display = 'none'; // Ocultar fila si está fuera del rango de la página actual
+            }
+        });
+    }
+
+    // Mostrar la primera página al cargar la página
+    showPage(currentPage);
+
+    // Control de evento para el botón "Siguiente"
+    document.getElementById('nextPage').addEventListener('click', function() {
+        if (currentPage < numPages) {
+            currentPage++; // Ir a la siguiente página si no estamos en la última
+            showPage(currentPage); // Mostrar las filas de la nueva página
+        }
+    });
+
+    // Control de evento para el botón "Anterior"
+    document.getElementById('prevPage').addEventListener('click', function() {
+        if (currentPage > 1) {
+            currentPage--; // Ir a la página anterior si no estamos en la primera
+            showPage(currentPage); // Mostrar las filas de la nueva página
+        }
+    });
+});
 

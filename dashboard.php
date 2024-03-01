@@ -13,7 +13,7 @@
     <link rel="preload" href="js/dashboard.js" as="script">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/molot" rel="stylesheet">
     <title>Dashboard</title>
     <style>
@@ -59,19 +59,19 @@
             <p class="menu-title">Menu</p>
             <ul class="menu-list">
                 <li>
-                    <a href="#" class="menu-option" onclick="showSection('inicio')">Inicio</a>
+                    <a href="#" class="menu-option" onclick="showSection('inicio')" id="inicio-title">Inicio</a>
                 </li>
                 <li>
-                    <a href="#" class="menu-option" onclick="showSection('lanzamientos')">Nuevo Lanzamiento</a>
+                    <a href="#" class="menu-option" onclick="showSection('lanzamientos')" id="lanzamientos-title">Nuevo Lanzamiento</a>
                 </li>
                 <li>
-                    <a href="#" class="menu-option" onclick="showSection('ganancias')">Ganancias Compartidas</a>
+                    <a href="#" class="menu-option" onclick="showSection('ganancias')" id="ganancias-title">Ganancias Compartidas</a>
                 </li>
                 <li>
-                    <a href="#" class="menu-option" onclick="showSection('estadisticas')">Estadísticas</a>
+                    <a href="#" class="menu-option" onclick="showSection('estadisticas')" id="estadisticas-title">Estadísticas</a>
                 </li>
                 <li>
-                    <a href="#" class="menu-option" onclick="showSection('transacciones')">Transacciones</a>
+                    <a href="#" class="menu-option" onclick="showSection('transacciones')" id="transacciones-title">Transacciones</a>
                 </li>
             </ul>
             <p class="menu-title">Marketing</p>
@@ -87,9 +87,7 @@
                 </div>
                 <div class="half-width right-content">
                     <div class="column-container">
-                        <!-- Contenedor para el icono y el texto 1 -->
                         <div class="icon-text-container">
-                            <!-- Icono -->
                             <svg xmlns="http://www.w3.org/2000/svg" fill="blue" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
@@ -109,72 +107,88 @@
                 </div>
             </div>
             <div class="otro-inicio">
-                <h2>Lanzamientos</h2>
-                <div class="row">
-                    <div class="column identifier"></div>
-                    <div class="column title_row">Titulo</div>
-                    <div class="column release-id">ID de lanzamiento</div>
-                    <div class="column upc">UPC</div>
-                    <div class="column isrc">ISRC</div>
-                    <div class="column release-date">Fecha de lanzamiento</div>
-                </div>
-                <div class="row">
-                    <div class="column identifier">1</div>
-                    <div class="column title-img">
-                        <div class="image-container">
-                            <img src="img/LOGO CARAM STUDIO.webp" alt="Nombre de la canción">
-                        </div>
-                        canciónasfasfasfasfasfasfas
-                    </div>
-                    <div class="column release-id">578513</div>
-                    <div class="column upc">1872798</div>
-                    <div class="column isrc">1AS5AS84</div>
-                    <div class="column release-date">24/02/2024</div>
-                </div>
-                <div class="row">
-                    <div class="column identifier">1</div>
-                    <div class="column title-img">
-                        <div class="image-container">
-                            <img src="img/LOGO CARAM STUDIO.webp" alt="Nombre de la canción">
-                        </div>
-                        canciónasfasfasfasfa
-                    </div>
-                    <div class="column release-id">578513</div>
-                    <div class="column upc">1872798</div>
-                    <div class="column isrc">1AS5AS84</div>
-                    <div class="column release-date">24/02/2024</div>
-                </div>
-                <div class="row">
-                    <div class="column identifier">1</div>
-                    <div class="column title-img">
-                        <div class="image-container">
-                            <img src="img/LOGO CARAM STUDIO.webp" alt="Nombre de la canción">
-                        </div>
-                        canciónasfasfasfasfasfasfasasa
-                    </div>
-                    <div class="column release-id">578513</div>
-                    <div class="column upc">1872798</div>
-                    <div class="column isrc">1AS5AS84</div>
-                    <div class="column release-date">24/02/2024</div>
-                </div>
-                <div class="row">
-                    <div class="column identifier">1</div>
-                    <div class="column title-img">
-                        <div class="image-container">
-                            <img src="img/LOGO CARAM STUDIO.webp" alt="Nombre de la canción">
-                        </div>
-                        canciónasfasfasfasfasfasfasasfas
-                    </div>
-                    <div class="column release-id">578513</div>
-                    <div class="column upc">1872798</div>
-                    <div class="column isrc">1AS5AS84</div>
-                    <div class="column release-date">24/02/2024</div>
-                </div>
-
+            <h2>Título</h2>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Título</th>
+                        <th>ID de lanzamiento</th>
+                        <th>UPC</th>
+                        <th>ISRC</th>
+                        <th>Fecha de lanzamiento</th>
+                    </tr>
+                    <tr class="colored-rows">
+                        <td>1</td>
+                        <td>
+                            <div class="song-info">
+                                <img src="img/LOGO CARAM STUDIO.webp" alt="Imagen de la canción">
+                                Nombre de la canción
+                            </div>
+                        </td>
+                        <td>578513</td>
+                        <td>1872798</td>
+                        <td>1AS5AS84</td>
+                        <td>24/02/2024</td>
+                    </tr>
+                    <tr class="colored-rows">
+                        <td>2</td>
+                        <td>
+                            <div class="song-info">
+                                <img src="img/LOGO CARAM STUDIO.webp" alt="Imagen de la canción">
+                                Nombre de la canción
+                            </div>
+                        </td>
+                        <td>578513</td>
+                        <td>1872798</td>
+                        <td>1AS5AS84</td>
+                        <td>24/02/2024</td>
+                    </tr>
+                    <tr class="colored-rows">
+                        <td>3</td>
+                        <td>
+                            <div class="song-info">
+                                <img src="img/LOGO CARAM STUDIO.webp" alt="Imagen de la canción">
+                                Nombre de la canción
+                            </div>
+                        </td>
+                        <td>578513</td>
+                        <td>1872798</td>
+                        <td>1AS5AS84</td>
+                        <td>24/02/2024</td>
+                    </tr>
+                    <tr class="colored-rows">
+                        <td>4</td>
+                        <td>
+                            <div class="song-info">
+                                <img src="img/LOGO CARAM STUDIO.webp" alt="Imagen de la canción">
+                                Nombre de la canción
+                            </div>
+                        </td>
+                        <td>578513</td>
+                        <td>1872798</td>
+                        <td>1AS5AS84</td>
+                        <td>24/02/2024</td>
+                    </tr>
+                    <tr class="colored-rows">
+                        <td>5</td>
+                        <td>
+                            <div class="song-info">
+                                <img src="img/LOGO CARAM STUDIO.webp" alt="Imagen de la canción">
+                                Nombre de la canción
+                            </div>
+                        </td>
+                        <td>578513</td>
+                        <td>1872798</td>
+                        <td>1AS5AS84</td>
+                        <td>24/02/2024</td>
+                    </tr>
+                </table>
+                <div class="pagination-container">
+                    <button id="prevPage">Anterior</button>
+                    <button id="nextPage">Siguiente</button>
             </div>
         </div>
-
-
+        </div>
         <div id="lanzamientos" class="d-content" style="display: none;">
             <div class="contenido-lanzamientos">
                 <!-- Contenido principal aquí -->
@@ -203,6 +217,7 @@
         </div>
 
         <div id="transacciones" class="d-content" style="display: none;">
+        <div id="custom-loader"></div>
             <div class="contenido-transacciones">
                 <!-- Contenido principal aquí -->
             </div>

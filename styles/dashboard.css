@@ -10,25 +10,52 @@
     display: flex; /* Utilizar flexbox */
     height: calc(100% - 100px - 100px); /* Altura total - altura del header - altura del footer */
 }
+.bold {
+    font-weight: bold;
+}
 
 .d-menu {
     display: flex;
     flex-direction: column;
-    width: 25%; /* El menú ocupa el 25% de la pantalla */
-    background-color: transparent; /* Color de fondo del menú */
-    border-right: 1px solid #e0e0e0; /* Borde derecho gris claro */
+    width: 20%;
+    background-color: transparent;
+    border-right: 1px solid #e0e0e0; 
     z-index: 105;
-    color: white; /* Cambiar el color del texto a blanco */
-    font-size: 18px; /* Cambiar el tamaño del texto */
-    margin-left: 3%; /* Ajusta el valor del margen según sea necesario */
+    color: white;
+    font-size: 25px;
+    margin-left: 3%;  
+}
+
+.menu-title,
+.menu-list{
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.menu-list{
+    margin-left: 35px;
+    font-size: 35px;
+    list-style-type: none;
+}
+
+.menu-list li {
+    list-style-type: none; /* Quita los marcadores de viñetas de los elementos de la lista */
+}
+
+.menu-option.active {
+    font-weight: bold;
+    pointer-events: none;
 }
 
 .menu-option {
     padding: 10px;
     text-decoration: none;
     display: block;
-    color: white; /* Cambiar el color del texto a blanco */
-    font-size: 18px; /* Cambiar el tamaño del texto */
+    color: white;
+    font-size: 18px;
     width: fit-content;
 }
 
@@ -76,14 +103,23 @@
     background: #45a049;
 }
 
+#inicio,
+#lanzamientos,
+#ganancias,
+#estadisticas,
+#transacciones {
+    display: block;
+}
+
 .contenido-inicio {
     width: calc(100% - 10%);
     height: 35%;
     margin: 35px 45px 10px 45px;
-    background: linear-gradient(to top, #98129c, rgba(152, 18, 156, 0));
+    background: linear-gradient(to top, #ae10d5, rgba(152, 18, 156, 0));
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    overflow: hidden; /* Para que el gradiente no se desborde */
+    overflow: hidden;
+    background-color: rgba(73, 34, 73, 0.4); /* Ajusta el valor de opacidad aquí */
 }
 
 .photo {
@@ -94,8 +130,10 @@
 .otro-inicio {
     width: calc(100% - 10%); /* Reducir el ancho total para dejar espacio en los lados */
     flex-grow: 1; /* Hace que ocupe el espacio restante */
-    background-color: gray;
+    /* background-color: gray; */
     margin: 0 45px; /* Agregar margen a los lados */
+    position: relative; /* Establece la posición del contenedor a relativa */
+    height: 65%;
 }
 
 .otro-inicio h2 {
@@ -103,48 +141,78 @@
     margin-bottom: 20px; /* Espacio inferior */
     font-size: 24px; /* Tamaño de fuente del título */
     font-weight: bold; /* Negrita */
-    color: #333333; /* Color del texto */
+    color: white; /* Color del texto */
 }
 
-.row {
-    display: flex; /* Utiliza flexbox para crear una fila */
-    justify-content: space-between; /* Espacio uniforme entre las columnas */
-    border-bottom: 1px solid #ccc; /* Línea separadora entre filas */
-    padding: 10px 0; /* Espaciado interior */
+.pagination-container {
+    position: absolute; /* Establece la posición de los botones a absoluta */
+    bottom: 10px; /* Ajusta la distancia desde la parte inferior */
+    left: 0; /* Alinea los botones a la izquierda */
+    width: 100%; /* Ajusta el ancho al 100% del contenedor padre */
+    text-align: center; /* Alinea los botones al centro horizontalmente */
 }
 
-.column {
+table {
+    border-collapse: separate; /* Cambiar a 'separate' para que los bordes colapsados tengan separación */
+    border-spacing: 0 10px; /* Espacio vertical entre las filas y 0 de espacio horizontal */
+    width: 100%;
+}
+
+/* Estilo para el primer td */
+td:first-child {
+    background-color: transparent; /* El primer td no tiene color de fondo */
+}
+
+th, td {
+    /* border: 1px solid #dddddd; */
+    text-align: left;
+    padding: 8px;
+    color: white;
+}
+
+.colored-rows td:nth-child(2) {
+    border-top-left-radius: 15%;
+    border-bottom-left-radius: 15%;
+}
+
+td {
+    text-align: left;
+    padding: 0px 0px; /* Ajusta el padding para crear más espacio entre filas */
+    color: white;
+    background-color: rgb(95 40 155 / 50%);
+}
+
+/* Estilo para el primer td */
+td:first-child {
+    background-color: transparent; /* El primer td no tiene color de fondo */
+}
+.song-info img  {
+    background-color: black; /* El primer td no tiene color de fondo */
+}
+
+th:nth-child(3),
+td:nth-child(3),
+th:nth-child(4),
+td:nth-child(4),
+th:nth-child(5),
+td:nth-child(5),
+th:nth-child(6),
+td:nth-child(6) {
+    text-align: center;
+}
+
+.song-info {
     display: flex;
-    flex: 1; /* Ocupa todo el espacio disponible */
-    text-align: center; /* Alineación centrada del texto */
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start; /* Alinear el contenido al inicio */
+    height: 60px; /* Altura aumentada */
 }
 
-
-
-.identifier {
-    flex: 0.2; /* Ancho de la columna del identificador */
-}
-
-.release-id,
-.upc,
-.isrc,
-.release-date {
-    flex: 1; /* Ancho de las otras columnas */
-}
-
-
-.image-container {
-    width: 50px; /* Tamaño del cuadro de imagen */
-    height: 50px;
-    overflow: hidden; /* Para recortar la imagen si es más grande */
-    margin: 0 auto; /* Centrar la imagen horizontalmente */
-}
-
-.image-container img {
-    width: 100%; /* Ajustar la imagen al tamaño del contenedor */
-    height: auto; /* Mantener la proporción de aspecto */
-    display: block; /* Evitar el espacio adicional debajo de la imagen */
+.song-info img {
+    width: 60px;
+    height: 100%; 
+    border-radius: 25%; 
+    margin-right: 20px;
 }
 
 .left-content,
