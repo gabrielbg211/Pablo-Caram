@@ -1,4 +1,4 @@
-<?php include 'source/estado.php'; ?>
+<?php // include 'source/estado.php'; ?>
 <?php include 'source/dash_session.php'; ?>
 
 <!DOCTYPE html>

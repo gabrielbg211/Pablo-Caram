@@ -1,4 +1,4 @@
-<?php include 'source/estado.php'; ?>
+<?php // include 'source/estado.php'; ?>
 <?php include 'source/conexion.php'; ?>
 <?php include 'source/check_session.php'; ?>
 
