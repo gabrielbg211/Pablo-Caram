@@ -83,6 +83,7 @@ window.onload = function() {
     showSection('inicio');
 };
 
+// JavaScript
 document.addEventListener("DOMContentLoaded", function() {
     const rowsPerPage = 4; // Número de filas por página
     let currentPage = 1; // Página actual, iniciando en la primera
@@ -104,14 +105,30 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Mostrar la primera página al cargar la página
-    showPage(currentPage);
+    // Función para actualizar la visibilidad de los botones de paginación
+    function updatePaginationButtons() {
+        const prevButton = document.getElementById('prevPage');
+        const nextButton = document.getElementById('nextPage');
+
+        if (currentPage === 1) {
+            prevButton.style.display = 'none'; // Ocultar el botón "Anterior" en la primera página
+        } else {
+            prevButton.style.display = 'block'; // Mostrar el botón "Anterior" si no estamos en la primera página
+        }
+
+        if (currentPage === numPages) {
+            nextButton.style.display = 'none'; // Ocultar el botón "Siguiente" en la última página
+        } else {
+            nextButton.style.display = 'block'; // Mostrar el botón "Siguiente" si no estamos en la última página
+        }
+    }
 
     // Control de evento para el botón "Siguiente"
     document.getElementById('nextPage').addEventListener('click', function() {
         if (currentPage < numPages) {
             currentPage++; // Ir a la siguiente página si no estamos en la última
             showPage(currentPage); // Mostrar las filas de la nueva página
+            updatePaginationButtons(); // Actualizar visibilidad de botones de paginación
         }
     });
 
@@ -120,7 +137,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if (currentPage > 1) {
             currentPage--; // Ir a la página anterior si no estamos en la primera
             showPage(currentPage); // Mostrar las filas de la nueva página
+            updatePaginationButtons(); // Actualizar visibilidad de botones de paginación
         }
     });
-});
 
+    // Mostrar la primera página al cargar la página
+    showPage(currentPage);
+    updatePaginationButtons(); // Actualizar visibilidad de botones de paginación al cargar la página
+});

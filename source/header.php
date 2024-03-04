@@ -8,9 +8,9 @@
     <?php if (basename($_SERVER['PHP_SELF']) === 'dashboard.php') : ?>
         <!-- Mostrar elementos adicionales solo en el dashboard -->
         <nav class="dashboard-nav">
-            <a href="#" class="navegacion__enlace">Elemento 1</a>
-            <a href="#" class="navegacion__enlace">Elemento 2</a>
-            <a href="#" class="navegacion__enlace"><span class="circle"></span>Elemento 3</a>
+            <a href="#" class="navegacion__enlace">Plan - Gratis</a>
+            <a href="#" class="navegacion__enlace">Sebe a basico</a>
+            <a href="#" class="navegacion__enlace"><span class="circle"></span>PablitoCaram</a>
         </nav>
     <?php else : ?>
         <nav class="navegacion" id="navegacion">

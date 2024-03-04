@@ -104,7 +104,7 @@
 }
 
 #inicio,
-#lanzamientos,
+#Otra_Seccion,
 #ganancias,
 #estadisticas,
 #transacciones {
@@ -122,15 +122,73 @@
     background-color: rgba(73, 34, 73, 0.4); /* Ajusta el valor de opacidad aquí */
 }
 
-.photo {
-    width: 100%;
+
+
+.first-p {
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 25px;
+}
+
+.second-p {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    margin: 0px;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 2.5rem;
+}
+
+@media (min-width: 1600px) {
+    .second-p {
+        font-size: 3rem;
+    }
+}
+
+.last-p {
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 25px;
+}
+
+.white-fill path {
+    fill: white;
+}
+
+.photo-container {
+    position: relative;
     height: 100%;
+    overflow: hidden;
+}
+
+.photo {
+    width: auto; /* Ajusta el ancho automáticamente según el tamaño del contenedor */
+    height: 100%;
+    position: absolute;
+    top: 0; /* La imagen estará alineada con la parte superior del contenedor */
+    left: 0;
+    right: 0; /* La imagen ocupará todo el ancho del contenedor */
+    bottom: 0; /* La imagen ocupará todo el alto del contenedor */
+    margin: auto; /* Centra la imagen horizontalmente */
+    z-index: 1;
+}
+
+.half-width.left-content {
+    position: relative; /* Establece la posición del contenedor a relativa */
 }
 
 .otro-inicio {
     width: calc(100% - 10%); /* Reducir el ancho total para dejar espacio en los lados */
     flex-grow: 1; /* Hace que ocupe el espacio restante */
-    /* background-color: gray; */
     margin: 0 45px; /* Agregar margen a los lados */
     position: relative; /* Establece la posición del contenedor a relativa */
     height: 65%;
@@ -145,11 +203,41 @@
 }
 
 .pagination-container {
-    position: absolute; /* Establece la posición de los botones a absoluta */
-    bottom: 10px; /* Ajusta la distancia desde la parte inferior */
-    left: 0; /* Alinea los botones a la izquierda */
-    width: 100%; /* Ajusta el ancho al 100% del contenedor padre */
-    text-align: center; /* Alinea los botones al centro horizontalmente */
+    display: flex; /* Utiliza flexbox */
+    justify-content: flex-end; /* Distribuye los elementos a los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+    width: calc(104% - 90px); /* Ajusta el ancho del contenedor para dejar espacio para los botones */
+}
+
+.pagination-container button {
+    font-size: 16px;
+    margin-right: 10px; /* Añade margen entre los botones */
+}
+
+.pagination-container button:first-child {
+    margin-right: 10px; /* Ajusta el margen derecho del primer botón */
+}
+
+.pagination-container button:last-child {
+    margin-left: 10px; /* Ajusta el margen izquierdo del segundo botón */
+}
+
+
+.rounded-button {
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.primary {
+    background-color:rgb(95 40 155 / 50%);
+    color: white;
+}
+
+.secondary {
+    background-color:rgb(95 40 155 / 50%);
+    color: white;
 }
 
 table {
@@ -170,9 +258,23 @@ th, td {
     color: white;
 }
 
+th{
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  
+}
+
+h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
 .colored-rows td:nth-child(2) {
     border-top-left-radius: 15%;
     border-bottom-left-radius: 15%;
+    width: 35%;
 }
 
 td {
@@ -180,14 +282,15 @@ td {
     padding: 0px 0px; /* Ajusta el padding para crear más espacio entre filas */
     color: white;
     background-color: rgb(95 40 155 / 50%);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  
 }
 
 /* Estilo para el primer td */
 td:first-child {
     background-color: transparent; /* El primer td no tiene color de fondo */
-}
-.song-info img  {
-    background-color: black; /* El primer td no tiene color de fondo */
 }
 
 th:nth-child(3),
@@ -206,6 +309,17 @@ td:nth-child(6) {
     align-items: center;
     justify-content: flex-start; /* Alinear el contenido al inicio */
     height: 60px; /* Altura aumentada */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+
+}
+
+td.song-info {
+    max-width: 0;
+    width: 1%;
+    white-space: nowrap;
 }
 
 .song-info img {
@@ -213,6 +327,8 @@ td:nth-child(6) {
     height: 100%; 
     border-radius: 25%; 
     margin-right: 20px;
+    background-color: black; /* El primer td no tiene color de fondo */
+
 }
 
 .left-content,
@@ -239,15 +355,64 @@ td:nth-child(6) {
 .button-container {
     display: flex;
     flex-direction: row;
+    align-items: center; /* Centra verticalmente los elementos */
+}
+.button-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.button-container svg {
+    margin-right: 10px;
+    width: 20px;
+    margin-left: 10px;
 }
 
 .button-container button {
-    margin-right: 10px; /* Ajusta el margen entre los botones según sea necesario */
+    display: flex; /* Para que el contenido se muestre en línea */
+    align-items: center; /* Centra verticalmente el contenido */
+    width: 150px; /* Ancho deseado para los botones */
+    height: 40px; /* Altura deseada para los botones */
+    border-radius: 10px; /* Radio de borde para redondear las esquinas */
+}
+.button-container button:first-child {
+    width: 100px; /* Ancho deseado para el primer botón */
+    height: 40px; /* Altura deseada para los botones */
+    border-radius: 15px; /* Radio de borde para redondear las esquinas */
+    margin-right: 10px; /* Espacio entre los botones */
+    margin-top: 0;
+    background-color: white;
+
+}
+
+.button-container button:last-child {
+    width: 150px; /* Ancho deseado para el segundo botón */
+    height: 40px; /* Altura deseada para los botones */
+    border-radius: 15px; /* Radio de borde para redondear las esquinas */
+    margin-top: 0;
+    background-color: transparent;
+    border-color: white;
+}
+
+button:hover{
+    cursor: pointer;
+}
+.content-left {
+    margin-top: 10px;
+}
+
+.text-container {
+    max-width: 100%; /* Establece el ancho máximo al 65% del contenedor padre */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto supera el ancho máximo */
+    white-space: nowrap; /* Evita que el texto se rompa en múltiples líneas */
 }
 
 .icon-text-container {
     display: flex;
-    align-items: center; /* Alinear verticalmente los elementos */
+    align-items: center;
+    margin-top: 15px;
+    line-height: 0;
 }
 
 svg {
@@ -256,13 +421,13 @@ svg {
     margin-right: 10px; /* Espacio entre el icono y el texto */
 }
 
-.contenido-lanzamientos {
+.contenido-Otra_Seccion {
     width: 100%;
     height: 35%;
     /* background-color: rgb(165, 138, 138); */
 }
 
-.otro-lanzamientos {
+.otro-Otra_Seccion {
     width: 100%;
     height: calc(100% - 35%);
     /* background-color: rgb(189, 141, 141); */
@@ -328,6 +493,157 @@ svg {
     margin-right: 5px; /* Espacio entre el punto y el texto */
     position: relative;
     top: 0; /* Ajusta la posición vertical del punto */
+}
+
+.navegacion__enlace::before, .navegacion__enlace::after{
+    display: none;
+}
+
+.dashboard-nav .navegacion__enlace {
+    text-transform: none; /* Desactiva la transformación de texto */
+    font-family: "Source Sans 3", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.music-player-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px; /* Ajusta la altura según tus necesidades */
+    background-color: rgba(95, 40, 155, 0.5);
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 107;
+    border-top-left-radius: 15px; /* Redondea el borde superior izquierdo */
+    border-top-right-radius: 15px; /* Redondea el borde superior derecho */
+}
+
+.music-player-controls {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+.music-player-control {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-control {
+    display: flex;
+    width: 25%;
+    margin-bottom: 5px;
+    line-height: 1.5;
+    color: white;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.image-container {
+    margin-right: 5px; /* Ajustar el margen derecho */
+}
+
+.player-image {
+    width: 65px;
+    height: 60px;
+    border-radius: 25%;
+    background-color: black;
+}
+
+.sub_text-container {
+    overflow: hidden;
+    width: 50%; /* Tamaño inicial del contenedor de texto */
+    white-space: nowrap;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;  
+}
+
+.text1 {
+    margin: 0;
+    animation: slide-text 10s linear infinite;
+    line-height: 1;
+    font-size: 15px;
+}
+
+p.text2 {
+    margin: 0;
+}
+
+@keyframes slide-text {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.center-control {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espacio entre los elementos */
+    width: 50%;
+    margin-bottom: 5px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    width: 100%;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    margin: 0px 10px 0 10px;
+    fill: #ffffff;
+}
+
+.play-icon,
+.forward-icon {
+    fill: #ffffff;
+    border-radius: 25px;
+}
+
+/* Relleno negro para el icono de reproducción */
+.play-icon {
+    fill: #000000;
+    background-color: #ffffff;
+}
+
+.counters {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Ancho total */
+    margin-top: 5px; /* Espacio entre los iconos y los contadores */
+}
+
+.progress-bar {
+    width: 85%; /* Ancho total */
+    height: 8px;
+    background-color: #ccc;
+    margin-top: 5px; /* Espacio entre los contadores y la barra de progreso */
+}
+
+.progress {
+    height: 100%;
+    background-color: #4CAF50; /* Color de la barra de progreso */
+}
+
+.right-control {
+    width: 25%;
 }
 
 @media (min-width: 1280px) {
