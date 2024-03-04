@@ -17,7 +17,7 @@
 .d-menu {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 25%;
     background-color: transparent;
     border-right: 1px solid #e0e0e0; 
     z-index: 105;
@@ -173,7 +173,6 @@
 .photo {
     width: auto; /* Ajusta el ancho automáticamente según el tamaño del contenedor */
     height: 100%;
-    position: absolute;
     top: 0; /* La imagen estará alineada con la parte superior del contenedor */
     left: 0;
     right: 0; /* La imagen ocupará todo el ancho del contenedor */

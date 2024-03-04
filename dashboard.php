@@ -138,7 +138,7 @@
                         <td>
                             <div class="song-info">
                                 <img src="img/LOGO LATA.webp" alt="Imagen de la canción">
-                                <div class="text-container">ahora si se viene los bueno gente | Test of sound</div>
+                                <div class="text-container">esto es un test para probrar el nombre | Test of sound</div>
                             </div>
                         </td>
                         <td>578513</td>
