@@ -171,7 +171,8 @@
 }
 
 .photo {
-    width: auto; /* Ajusta el ancho automáticamente según el tamaño del contenedor */
+    width: auto;
+    position: absolute;
     height: 100%;
     top: 0; /* La imagen estará alineada con la parte superior del contenedor */
     left: 0;
@@ -182,7 +183,8 @@
 }
 
 .half-width.left-content {
-    position: relative; /* Establece la posición del contenedor a relativa */
+    position: relative;
+    height: 100%;
 }
 
 .otro-inicio {
