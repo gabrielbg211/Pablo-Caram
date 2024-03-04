@@ -145,3 +145,101 @@ document.addEventListener("DOMContentLoaded", function() {
     showPage(currentPage);
     updatePaginationButtons(); // Actualizar visibilidad de botones de paginación al cargar la página
 });
+
+const fourthButton = document.querySelector('.fourth-button');
+const playIcon = fourthButton.querySelector('.icon-tabler-player-play');
+const pauseIcon = fourthButton.querySelector('.icon-tabler-player-pause');
+
+let isPlaying = false;
+
+// Función para el cuarto botón
+fourthButton.addEventListener('click', () => {
+    if (isPlaying) {
+        playIcon.style.display = 'block';
+        pauseIcon.style.display = 'none';
+    } else {
+        playIcon.style.display = 'none';
+        pauseIcon.style.display = 'block';
+    }
+    
+    isPlaying = !isPlaying;
+});
+
+const fifthButton = document.querySelector('.fifth-button');
+
+// Función para el quinto botón
+fifthButton.addEventListener('mousedown', () => {
+    fifthButton.children[0].style.display = 'none';
+    fifthButton.children[1].style.display = 'block';
+});
+
+fifthButton.addEventListener('mouseup', () => {
+    fifthButton.children[0].style.display = 'block';
+    fifthButton.children[1].style.display = 'none';
+});
+
+const sixthButton = document.querySelector('.sixth-button');
+let count = 0;
+
+sixthButton.addEventListener('click', () => {
+    count++;
+    if (count === 1) {
+        // Cambiar al segundo ícono
+        sixthButton.children[0].style.display = 'none';
+        sixthButton.children[1].style.display = 'block';
+    } else if (count === 2) {
+        // Cambiar al tercer ícono
+        sixthButton.children[0].style.display = 'none';
+        sixthButton.children[1].style.display = 'none';
+        sixthButton.children[2].style.display = 'block';
+    } else {
+        // Volver al primer ícono y reiniciar el contador
+        count = 0;
+        sixthButton.children[0].style.display = 'block';
+        sixthButton.children[1].style.display = 'none';
+        sixthButton.children[2].style.display = 'none';
+    }
+});
+
+// Luego puedes continuar con los otros botones
+const firstButton = document.querySelector('.first-button');
+const secondButton = document.querySelector('.second-button');
+const thirdButton = document.querySelector('.third-button');
+
+
+// Función para el primer botón
+firstButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    firstButton.style.display = 'none';
+    secondButton.style.display = 'block';
+});
+
+// Función para el segundo botón
+secondButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    firstButton.style.display = 'block';
+    secondButton.style.display = 'none';
+});
+
+// Función para el tercer botón
+thirdButton.addEventListener('mousedown', () => {
+    thirdButton.children[0].style.display = 'none';
+    thirdButton.children[1].style.display = 'block';
+});
+
+thirdButton.addEventListener('mouseup', () => {
+    thirdButton.children[0].style.display = 'block';
+    thirdButton.children[1].style.display = 'none';
+});
+
+const iconButtons = document.querySelectorAll('.icon-button');
+
+iconButtons.forEach(button => {
+    button.addEventListener('mousedown', () => {
+        button.style.transform = 'scale(0.9)';
+    });
+
+    button.addEventListener('mouseup', () => {
+        button.style.transform = 'scale(1)';
+    });
+});

@@ -690,7 +690,7 @@ img {
     .dashboard-dropdown-content {
         display: none;
         position: absolute;
-        min-width: 160px;
+        min-width: 150px;
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         z-index: 1;
         padding: 8px 0;

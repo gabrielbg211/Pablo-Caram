@@ -76,6 +76,8 @@
     display: flex;
     flex-direction: column;
     z-index: 105;
+    position: relative;
+    bottom: 5%;
 }
 
 .search-container {
@@ -545,6 +547,7 @@ svg {
     color: white;
     flex-direction: row;
     justify-content: center;
+    align-items: flex-end;
 }
 
 .image-container {
@@ -552,6 +555,7 @@ svg {
 }
 
 .player-image {
+    display: flex;
     width: 65px;
     height: 60px;
     border-radius: 25%;
@@ -599,30 +603,34 @@ p.text2 {
 
 .icon-container {
     display: flex;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan */
-    justify-content: center; /* Centra los elementos horizontalmente */
-    width: 100%;
+    gap: 10px;
 }
 
 .icon {
     width: 30px;
     height: 30px;
     margin: 0px 10px 0 10px;
-    fill: #ffffff;
 }
 
-.play-icon,
-.forward-icon {
-    fill: #ffffff;
-    border-radius: 25px;
+.icon-button {
+    transition: transform 0.2s;
 }
 
+.icon-container .clickable {
+    cursor: pointer;
+}
 
-/* Relleno negro para el icono de reproducción */
-.play-icon {
-    fill: #000000;
-    background-color: #ffffff;
+.icon-tabler-player-play,
+.icon-tabler-player-pause {
+    background-color: white;
+    border-radius: 50%;
+    padding: 3px;
+}
+
+.hidden {
+    display: none;
 }
 
 .counters {
