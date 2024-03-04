@@ -302,7 +302,7 @@
                     <img src="img/LOGO LATA.webp" alt="Imagen" class="player-image">
                 </div>
                 <div class="sub_text-container">
-                    <p class="text1">Ahora si se viene los bueno gente | Test of sound</p>
+                    <p class="text1">esto es un test para probrar el nombre | Test of sound</p>
                     <p class="text2">No se que poner aqui</p>
                 </div>
             </div>
