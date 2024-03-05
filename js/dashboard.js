@@ -1,3 +1,6 @@
+let isPressing = false;
+let isPressingSeventh = false;
+
 document.addEventListener("DOMContentLoaded", function() {
     const loaderVideo = document.getElementById('loader-video');
     const loaderWrapper = document.getElementById('loader-wrapper');
@@ -146,66 +149,19 @@ document.addEventListener("DOMContentLoaded", function() {
     updatePaginationButtons(); // Actualizar visibilidad de botones de paginación al cargar la página
 });
 
-const fourthButton = document.querySelector('.fourth-button');
-const playIcon = fourthButton.querySelector('.icon-tabler-player-play');
-const pauseIcon = fourthButton.querySelector('.icon-tabler-player-pause');
-
-let isPlaying = false;
-
-// Función para el cuarto botón
-fourthButton.addEventListener('click', () => {
-    if (isPlaying) {
-        playIcon.style.display = 'block';
-        pauseIcon.style.display = 'none';
-    } else {
-        playIcon.style.display = 'none';
-        pauseIcon.style.display = 'block';
-    }
-    
-    isPlaying = !isPlaying;
-});
-
-const fifthButton = document.querySelector('.fifth-button');
-
-// Función para el quinto botón
-fifthButton.addEventListener('mousedown', () => {
-    fifthButton.children[0].style.display = 'none';
-    fifthButton.children[1].style.display = 'block';
-});
-
-fifthButton.addEventListener('mouseup', () => {
-    fifthButton.children[0].style.display = 'block';
-    fifthButton.children[1].style.display = 'none';
-});
-
-const sixthButton = document.querySelector('.sixth-button');
-let count = 0;
-
-sixthButton.addEventListener('click', () => {
-    count++;
-    if (count === 1) {
-        // Cambiar al segundo ícono
-        sixthButton.children[0].style.display = 'none';
-        sixthButton.children[1].style.display = 'block';
-    } else if (count === 2) {
-        // Cambiar al tercer ícono
-        sixthButton.children[0].style.display = 'none';
-        sixthButton.children[1].style.display = 'none';
-        sixthButton.children[2].style.display = 'block';
-    } else {
-        // Volver al primer ícono y reiniciar el contador
-        count = 0;
-        sixthButton.children[0].style.display = 'block';
-        sixthButton.children[1].style.display = 'none';
-        sixthButton.children[2].style.display = 'none';
-    }
-});
-
 // Luego puedes continuar con los otros botones
 const firstButton = document.querySelector('.first-button');
 const secondButton = document.querySelector('.second-button');
 const thirdButton = document.querySelector('.third-button');
-
+const fourthButton = document.querySelector('.fourth-button');
+const fifthButton = document.querySelector('.fifth-button');
+const sixthButton = document.querySelector('.sixth-button');
+const seventhButton = document.querySelector('.seventh-button');
+const eighthButton = document.querySelector('.eighth-button');
+const ninthButton = document.querySelector('.ninth-button');
+const tenthButton = document.querySelector('.tenth-button');
+const eleventhButton = document.querySelector('.eleventh-button');
+const repeatButton = document.getElementById('repeatButton');
 
 // Función para el primer botón
 firstButton.addEventListener('click', (event) => {
@@ -213,7 +169,6 @@ firstButton.addEventListener('click', (event) => {
     firstButton.style.display = 'none';
     secondButton.style.display = 'block';
 });
-
 // Función para el segundo botón
 secondButton.addEventListener('click', (event) => {
     event.preventDefault();
@@ -223,18 +178,74 @@ secondButton.addEventListener('click', (event) => {
 
 // Función para el tercer botón
 thirdButton.addEventListener('mousedown', () => {
-    thirdButton.children[0].style.display = 'none';
-    thirdButton.children[1].style.display = 'block';
+    isPressing = true;
+    thirdButton.style.display = 'none';
+    fourthButton.style.display = 'block';
+});
+// Función para el cuarto botón
+document.addEventListener('mouseup', () => {
+    if (isPressing) {
+        isPressing = false;
+        fourthButton.style.display = 'none';
+        thirdButton.style.display = 'block';
+    }
 });
 
-thirdButton.addEventListener('mouseup', () => {
-    thirdButton.children[0].style.display = 'block';
-    thirdButton.children[1].style.display = 'none';
+// Función para el quiton botón
+fifthButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    fifthButton.style.display = 'none';
+    sixthButton.style.display = 'block';
+});
+// Función para el sexto botón
+sixthButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    fifthButton.style.display = 'block';
+    sixthButton.style.display = 'none';
 });
 
-const iconButtons = document.querySelectorAll('.icon-button');
+// Función para el septimo botón
+seventhButton.addEventListener('mousedown', () => {
+    isPressingSeventh = true;
+    seventhButton.style.display = 'none';
+    eighthButton.style.display = 'block';
+});
+// Función para el octavo botón
+document.addEventListener('mouseup', () => {
+    if (isPressingSeventh) {
+        isPressingSeventh = false;
+        eighthButton.style.display = 'none';
+        seventhButton.style.display = 'block';
+    }
+});
 
-iconButtons.forEach(button => {
+// Función para el noveno botón
+ninthButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    ninthButton.style.display = 'none';
+    tenthButton.style.display = 'block';
+    eleventhButton.style.display = 'none';
+});
+// Función para el décimo botón
+tenthButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    ninthButton.style.display = 'none';
+    tenthButton.style.display = 'none';
+    eleventhButton.style.display = 'block';
+});
+// Función para el undécimo botón
+eleventhButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    ninthButton.style.display = 'block';
+    tenthButton.style.display = 'none';
+    eleventhButton.style.display = 'none';
+});
+
+
+// funciones de presion de botones
+const firstButtons = document.querySelectorAll('.first-button, .second-button, .fifth-button, .sixth-button, .ninth-button, .tenth-button, .eleventh-button');
+
+firstButtons.forEach(button => {
     button.addEventListener('mousedown', () => {
         button.style.transform = 'scale(0.9)';
     });
@@ -243,3 +254,192 @@ iconButtons.forEach(button => {
         button.style.transform = 'scale(1)';
     });
 });
+
+const thirdButtons = document.querySelectorAll('.third-button, .fourth-button, .seventh-button, .eighth-button');
+
+thirdButtons.forEach(button => {
+    button.addEventListener('mousedown', () => {
+        button.style.transform = 'scale(1)';
+    });
+
+    button.addEventListener('mouseup', () => {
+        button.style.transform = 'scale(0.9)';
+    });
+});
+
+
+// Volumen bar
+const volumeBar = document.querySelector('.volume-bar');
+
+// Función para guardar el volumen y la posición de la bola en el almacenamiento local del navegador
+function saveVolume() {
+    localStorage.setItem('volume', volumeBar.value);
+}
+
+// Función para cargar el volumen y la posición de la bola desde el almacenamiento local del navegador
+function loadVolume() {
+    const savedVolume = localStorage.getItem('volume');
+    if (savedVolume !== null) {
+        volumeBar.value = savedVolume;
+        updateVolumeBarBackground(); // Actualizar el fondo del control deslizante de volumen
+    }
+}
+
+// Cargar el volumen y la posición de la bola almacenados cuando la página se carga
+window.addEventListener('load', function() {
+    loadVolume();
+});
+
+// Actualizar el fondo del control deslizante de volumen y guardar el volumen cuando cambia
+volumeBar.addEventListener('input', function() {
+    updateVolumeBarBackground();
+    saveVolume();
+});
+
+// Función para actualizar el fondo del control deslizante de volumen
+function updateVolumeBarBackground() {
+    const value = (volumeBar.value - volumeBar.min) / (volumeBar.max - volumeBar.min);
+    const colorLeft = "#a905b6";
+    const colorRight = "#ddd";
+    const backgroundColor = `linear-gradient(to right, ${colorLeft} 0%, ${colorLeft} ${value * 100}%, ${colorRight} ${value * 100}%, ${colorRight} 100%)`;
+    volumeBar.style.background = backgroundColor;
+}
+
+// Actualizar el fondo del control deslizante de volumen y guardar el volumen cuando cambia
+volumeBar.addEventListener('input', function() {
+    updateVolumeBar();
+    saveVolume();
+});
+
+// Función para actualizar el fondo del control deslizante de volumen y mostrar los iconos correspondientes
+function updateVolumeBar() {
+    const value = (volumeBar.value - volumeBar.min) / (volumeBar.max - volumeBar.min);
+    const colorLeft = "#a905b6";
+    const colorRight = "#ddd";
+    const backgroundColor = `linear-gradient(to right, ${colorLeft} 0%, ${colorLeft} ${value * 100}%, ${colorRight} ${value * 100}%, ${colorRight} 100%)`;
+    volumeBar.style.background = backgroundColor;
+
+    // Mostrar los iconos correspondientes según el valor de la barra de volumen
+    const volumeIcons = document.querySelector('.volume-icons');
+    if (value === 0) {
+        volumeIcons.querySelector('.icon-tabler-volume-off').style.display = 'block';
+        volumeIcons.querySelector('.icon-tabler-volume-2').style.display = 'none';
+        volumeIcons.querySelector('.icon-tabler-volume').style.display = 'none';
+    } else if (value <= 0.75) {
+        volumeIcons.querySelector('.icon-tabler-volume-off').style.display = 'none';
+        volumeIcons.querySelector('.icon-tabler-volume-2').style.display = 'block';
+        volumeIcons.querySelector('.icon-tabler-volume').style.display = 'none';
+    } else {
+        volumeIcons.querySelector('.icon-tabler-volume-off').style.display = 'none';
+        volumeIcons.querySelector('.icon-tabler-volume-2').style.display = 'none';
+        volumeIcons.querySelector('.icon-tabler-volume').style.display = 'block';
+    }
+}
+
+// Cargar el volumen y la posición de la bola almacenados cuando la página se carga
+window.addEventListener('load', function() {
+    loadVolume();
+    updateVolumeBar();
+});
+
+const audio = document.getElementById('audio');
+
+// Función para actualizar el volumen del elemento de audio según el valor del control deslizante de volumen
+function updateAudioVolume() {
+    const volume = volumeBar.value / 100; // Convertir el valor del control deslizante a un valor entre 0 y 1
+    audio.volume = volume; // Establecer el volumen del elemento de audio
+}
+
+// Actualizar el volumen del audio cuando cambia el valor del control deslizante
+volumeBar.addEventListener('input', function() {
+    updateAudioVolume();
+});
+
+// Función para obtener el volumen actual del audio
+function getCurrentAudioVolume() {
+    return audio.volume * 100; // Convertir el volumen del elemento de audio a un valor entre 0 y 100
+}
+
+// Ejemplo de cómo usar getCurrentAudioVolume para obtener el volumen actual
+const currentVolume = getCurrentAudioVolume();
+console.log('Volumen actual:', currentVolume);
+
+
+// Función para reproducir el audio
+function playAudio() {
+    audio.play();
+}
+
+// Función para pausar el audio
+function pauseAudio() {
+    audio.pause();
+}
+
+// Función para cambiar el botón a quinto botón (reproducción)
+function changeToPlayButton() {
+    fifthButton.style.display = 'block';
+    sixthButton.style.display = 'none';
+}
+
+// Evento de clic para el quinto botón (reproducción)
+fifthButton.addEventListener('click', function() {
+    playAudio();
+    fifthButton.style.display = 'none';
+    sixthButton.style.display = 'block';
+});
+
+// Evento de clic para el sexto botón (pausa)
+sixthButton.addEventListener('click', function() {
+    pauseAudio();
+    changeToPlayButton();
+});
+
+// Evento para cambiar el botón a quinto botón cuando el audio termine de reproducirse
+audio.addEventListener('ended', function() {
+    changeToPlayButton();
+});
+
+// Función para guardar el volumen en el almacenamiento local
+function saveVolume() {
+    localStorage.setItem('volume', volumeBar.value);
+    audio.volume = volumeBar.value / 100; // Actualizar el volumen del audio
+}
+
+// Función para cargar el volumen desde el almacenamiento local
+function loadVolume() {
+    const savedVolume = localStorage.getItem('volume');
+    if (savedVolume !== null) {
+        volumeBar.value = savedVolume;
+        audio.volume = savedVolume / 100; // Establecer el volumen del audio al valor guardado
+    }
+}
+
+// Cargar el volumen cuando la página se carga
+window.addEventListener('load', function() {
+    loadVolume();
+});
+
+// Actualizar el volumen y guardarlo cuando cambia el control deslizante
+volumeBar.addEventListener('input', function() {
+    saveVolume();
+});
+
+// Repetir la canción en un bucle cuando se hace clic en el botón de repetición
+repeatButton.addEventListener('click', function() {
+    if (audio.loop) {
+        audio.loop = false; // Desactivar la repetición si está activada
+        repeatButton.classList.remove('active'); // Remover la clase de activación del botón
+    } else {
+        audio.loop = true; // Activar la repetición si está desactivada
+        repeatButton.classList.add('active'); // Agregar la clase de activación al botón
+    }
+});
+
+const stopRepeatButton = document.getElementById('stopRepeatButton');
+        // Detener la repetición cuando se hace clic en el botón de detención de repetición
+        stopRepeatButton.addEventListener('click', function() {
+            if (audio.loop) {
+                audio.loop = false; // Desactivar la repetición
+                stopRepeatButton.style.display = 'none'; // Ocultar el botón de detención de repetición
+            }
+        });

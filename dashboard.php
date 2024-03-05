@@ -309,6 +309,7 @@
             <div class="music-player-control center-control">
                 <!-- Iconos -->
                 <div class="icon-container">
+                    <!-- Random Buttom -->
                     <button class="icon-button first-button" style="border: none; background: none; padding: 0;">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrows-shuffle" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -327,72 +328,107 @@
                             <path d="M21 7h-5a4.978 4.978 0 0 0 -3 1m-4 8a4.984 4.984 0 0 1 -3 1h-3" />
                         </svg>
                     </button>
+                    <!-- Back Track Buttom -->
                     <button class="icon-button third-button" style="border: none; background: none; padding: 0;">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-track-prev" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M21 5v14l-8 -7z" />
-                        <path d="M10 5v14l-8 -7z" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-track-prev" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="#a905b6" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-track-prev" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M21 5v14l-8 -7z" />
                         <path d="M10 5v14l-8 -7z" />
                         </svg>
                     </button>
-                    <button class="icon-button fourth-button" style="border: none; background: none; padding: 0;">
+                    <button class="icon-button fourth-button" style="border: none; background: none; padding: 0; display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-track-prev" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M21 5v14l-8 -7z" />
+                        <path d="M10 5v14l-8 -7z" />
+                        </svg>
+                    </button>
+                    <!-- Play/Pause Buttom -->
+                    <button class="icon-button fifth-button" style="border: none; background: none; padding: 0;">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-play" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="black" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M7 4v16l13 -8z" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-pause" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="black" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M6 5m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" />
-                            <path d="M14 5m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" />
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M7 4v16l13 -8z" />
                         </svg>
                     </button>
-                    <button class="icon-button fifth-button" style="border: none; background: none; padding: 0;" >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-track-next" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="#FFFFFF" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M3 5v14l8 -7z" />
-                            <path d="M14 5v14l8 -7z" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-track-next" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="#a905b6" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M3 5v14l8 -7z" />
-                            <path d="M14 5v14l8 -7z" />
+                    <button class="icon-button sixth-button" style="border: none; background: none; padding: 0; display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-pause" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="black" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M6 5m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" />
+                        <path d="M14 5m0 1a1 1 0 0 1 1 -1h2a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1z" />
                         </svg>
                     </button>
-                    <button class="icon-button sixth-button" style="border: none; background: none; padding: 0;">
+                    <!-- Track Next Buttom -->
+                    <button class="icon-button seventh-button" style="border: none; background: none; padding: 0;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-track-next" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 5v14l8 -7z" />
+                        <path d="M14 5v14l8 -7z" />
+                        </svg>
+                    </button>
+                    <button class="icon-button eighth-button" style="border: none; background: none; padding: 0; display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-player-track-next" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 5v14l8 -7z" />
+                        <path d="M14 5v14l8 -7z" />
+                        </svg>
+                    </button>
+                    <!-- Repeat Buttom -->
+                    <button class="icon-button ninth-button" style="border: none; background: none; padding: 0;">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-repeat" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3" />
-                            <path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-repeat" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
                         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                         <path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3" />
                         <path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3" />
                         </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-repeat-once" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3" />
-                            <path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3" />
-                            <path d="M11 11l1 -1v4" />
+                    </button>
+                    <button class="icon-button tenth-button" id="repeatButton" style="border: none; background: none; padding: 0; display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-repeat" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3" />
+                        <path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3" />
+                        </svg>
+                    </button>
+                    <button class="icon-button eleventh-button" id="stopRepeatButton" style="border: none; background: none; padding: 0; display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-repeat-once" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3" />
+                        <path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3" />
+                        <path d="M11 11l1 -1v4" />
                         </svg>
                     </button>
                 </div>
-                <!-- Contadores -->
-                <div class="counters">
-                    <span class="counter">0:00</span>
-                    <!-- Barra de progreso -->
-                    <div class="progress-bar">
-                        <div class="progress"></div>
-                    </div>
-                    <span class="counter">3:30</span>
-                </div>
             </div>
             <div class="music-player-control right-control">
-                <!-- Aquí irá el contenido a la derecha -->
+                <div class="right-control">
+                    <span class="counter">0:00</span>
+                    <span class="counter">/</span>
+                    <span class="counter">3:30</span>
+                </div>
+                <div class="volume-control">
+                    <div class="volume-bar-container">
+                        <audio id="audio" src="test_sound.mp3"></audio>
+                        <input type="range" min="0" max="100" value="50" class="volume-bar">
+                        <div class="volume-icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-volume-off" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M15 8a5 5 0 0 1 1.912 4.934m-1.377 2.602a5 5 0 0 1 -.535 .464" />
+                                <path d="M17.7 5a9 9 0 0 1 2.362 11.086m-1.676 2.299a9 9 0 0 1 -.686 .615" />
+                                <path d="M9.069 5.054l.431 -.554a.8 .8 0 0 1 1.5 .5v2m0 4v8a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l1.294 -1.664" />
+                                <path d="M3 3l18 18" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-volume-2" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M15 8a5 5 0 0 1 0 8" />
+                                <path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-volume" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#a905b6" fill="none" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M15 8a5 5 0 0 1 0 8" />
+                                <path d="M17.7 5a9 9 0 0 1 0 14" />
+                                <path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -405,3 +441,5 @@
     <script src="js/dashboard.js"></script>
 </body>
 </html>
+
+

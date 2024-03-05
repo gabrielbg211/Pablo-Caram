@@ -626,7 +626,7 @@ p.text2 {
 .icon-tabler-player-pause {
     background-color: white;
     border-radius: 50%;
-    padding: 3px;
+    padding: 5px;
 }
 
 .hidden {
@@ -636,24 +636,67 @@ p.text2 {
 .counters {
     display: flex;
     justify-content: space-between;
-    width: 100%; /* Ancho total */
-    margin-top: 5px; /* Espacio entre los iconos y los contadores */
+    width: 100%;
+    margin-top: 5px;
 }
 
-.progress-bar {
-    width: 85%; /* Ancho total */
-    height: 8px;
-    background-color: #ccc;
-    margin-top: 5px; /* Espacio entre los contadores y la barra de progreso */
-}
-
-.progress {
-    height: 100%;
-    background-color: #4CAF50; /* Color de la barra de progreso */
+.counter {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .right-control {
+    display: flex;
     width: 25%;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+}
+
+/* Estilo básico para el input range */
+.volume-bar {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, #a905b6 0%, #a905b6 50%, #ddd 50%, #ddd 100%);
+    border-radius: 5px; /* Para que tenga esquinas redondeadas */
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+/* Estilo del control deslizante cuando el usuario interactúa */
+.volume-bar:hover {
+    opacity: 1;
+}
+
+/* Estilo de la bolita */
+.volume-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px; /* Ancho de la bolita */
+    height: 20px; /* Altura de la bolita */
+    background: #a905b6; /* Color de la bolita */
+    border-radius: 50%; /* Para que sea redonda */
+    border: 2px solid #a905b6; /* Borde de la bolita */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la bolita */
+    opacity: 0; /* Oculta la bola por defecto */
+    transition: opacity 0.3s ease; /* Agrega una transición para suavizar el cambio */
+
+}
+
+/* Estilo de la bolita cuando el usuario interactúa */
+.volume-bar:hover::-webkit-slider-thumb {
+    background: #a905b6; /* Cambia el color de la bolita al pasar sobre ella */
+    opacity: 1; /* Muestra la bola cuando el mouse está sobre el control deslizante */
+
+}
+
+.volume-bar-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
 }
 
 @media (min-width: 1280px) {
