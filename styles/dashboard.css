@@ -699,6 +699,16 @@ p.text2 {
     align-items: center;
 }
 
+.volume-button {
+    display: flex;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    align-items: center;
+}
+
+
 @media (min-width: 1280px) {
     .boton-hamburguesa {
         display: none;

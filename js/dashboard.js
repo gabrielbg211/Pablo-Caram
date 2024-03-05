@@ -436,10 +436,62 @@ repeatButton.addEventListener('click', function() {
 });
 
 const stopRepeatButton = document.getElementById('stopRepeatButton');
-        // Detener la repetición cuando se hace clic en el botón de detención de repetición
-        stopRepeatButton.addEventListener('click', function() {
-            if (audio.loop) {
-                audio.loop = false; // Desactivar la repetición
-                stopRepeatButton.style.display = 'none'; // Ocultar el botón de detención de repetición
-            }
-        });
+// Detener la repetición cuando se hace clic en el botón de detención de repetición
+stopRepeatButton.addEventListener('click', function() {
+    if (audio.loop) {
+        audio.loop = false; // Desactivar la repetición
+        stopRepeatButton.style.display = 'none'; // Ocultar el botón de detención de repetición
+    }
+});
+
+
+// Seleccionar los botones de volumen
+const volumeButton = document.querySelector('.icon-tabler-volume');
+const volume2Button = document.querySelector('.icon-tabler-volume-2');
+const volumeOffButton = document.querySelector('.icon-tabler-volume-off');
+
+// Variable para almacenar el volumen anterior
+let previousVolume = 0;
+
+// Función para cambiar el estado del botón y ajustar el volumen del audio
+function toggleVolume() {
+    if (audio.volume > 0) {
+        // Guardar el volumen actual antes de silenciarlo
+        previousVolume = audio.volume;
+        // Silenciar el audio
+        audio.volume = 0;
+        // Cambiar el botón a estado de volumen apagado
+        volumeButton.style.display = 'none';
+        volume2Button.style.display = 'none';
+        volumeOffButton.style.display = 'block';
+    } else {
+        // Restaurar el volumen anterior
+        audio.volume = previousVolume;
+        // Cambiar el botón al estado anterior
+        volumeButton.style.display = 'none';
+        volume2Button.style.display = 'block';
+        volumeOffButton.style.display = 'none';
+    }
+}
+
+// Agregar un evento de clic a los botones de volumen
+volumeButton.addEventListener('click', toggleVolume);
+volume2Button.addEventListener('click', toggleVolume);
+volumeOffButton.addEventListener('click', toggleVolume);
+
+
+// Función para ajustar la posición de la barra de volumen según el volumen del audio
+function updateVolumeBarPosition() {
+    // Obtener el valor del volumen actual y convertirlo a un valor entre 0 y 100
+    const volume = audio.volume * 100;
+    // Establecer el valor de la barra de volumen
+    volumeBar.value = volume;
+    // Actualizar el fondo de la barra de volumen
+    updateVolumeBarBackground();
+}
+
+// Llamar a la función para ajustar la posición de la barra de volumen cuando la página se carga
+window.addEventListener('load', updateVolumeBarPosition);
+
+// Llamar a la función para ajustar la posición de la barra de volumen cuando cambie el volumen del audio
+audio.addEventListener('volumechange', updateVolumeBarPosition);
