@@ -378,9 +378,9 @@ td.song-info {
 }
 
 .button-container svg {
-    margin-right: 10px;
+    /* margin-right: 10px; */
     width: 20px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 
 .button-container button {
